@@ -1,5 +1,3 @@
-# Codeando en Angular! 
-## Reutilizando Componentes 
 
 Hola amigos! les dejo mi opinion y algunas soluciones para encarar algunos casos reales mientras codeamos, espero les sirva! 
 
