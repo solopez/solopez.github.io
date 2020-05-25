@@ -1,0 +1,16 @@
+name: Codeando en Angular!
+title: Codeando en Angular! | Sol Lopez
+description: 
+tags:
+  - blog
+  - template
+  - jekyll
+  - theme
+  - netlify
+email: test@xyz.com
+disqus_username: sol
+show_hero: true
+menu:
+  - title: Home
+    url: /
+
