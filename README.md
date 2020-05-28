@@ -1,1 +1,1 @@
-Blog using theme made bueno Thiago, jekflix.
+Blog using theme made by Thiago, jekflix.
