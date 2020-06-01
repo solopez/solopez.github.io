@@ -1,10 +1,6 @@
 <footer>
+  <p>Sobre mí:</p>
     <p>
-      {% if site.github_username %}
-        <a href="https://github.com/{{ site.github_username }}" title="Github">
-          <svg><use xlink:href="#icon-github"></use></svg>
-        </a>
-      {% endif %}
       {% if site.facebook_username %}
         <a href="https://www.facebook.com/{{ site.facebook_username }}" title="Facebook">
           <svg><use xlink:href="#icon-facebook"></use></svg>
@@ -30,11 +26,15 @@
           <svg><use xlink:href="#icon-linkedin"></use></svg>
         </a>
       {% endif %}
+      {% if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}" title="Github">
+        <svg><use xlink:href="#icon-github"></use></svg>
+      </a>
+    {% endif %}
     </p>
 
-    {% include links.html %}
-
     <p>
+      <br>      
       <span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="https://rossener.com" target="_blank" class="creator">Thiago Rossener</a>
     </p>
 </footer>
