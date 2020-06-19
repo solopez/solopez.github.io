@@ -15,7 +15,7 @@ author: sol lopez
 # Unit testing con Jasmine! 
 ## Metele tests!
 
-Hola! Siguiendo con unit testing.. alguna vez les pasó que los tests que contienen un reactive form no instancian correctamente los controles? Bueno, ya les va a pasar jaja.
+Hola! Siguiendo con unit testing.. alguna vez les pasó que los tests que contienen un reactive form no instancian correctamente los controles? Bueno, ya les va a pasar :D
 
 A veces nos vamos a encontrar con esta maravilla:
 

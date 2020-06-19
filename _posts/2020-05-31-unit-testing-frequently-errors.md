@@ -2,10 +2,8 @@
 date: 2020-05-31 12:26:40
 layout: post
 title: Armando unit tests en Jasmine!
-subtitle: Errores frecuentes.
-description: Errores frecuentes.
+description: Errores frecuentes
 image: 'assets/img/jasmine.png'
-optimized_image: 'assets/img/jasmine.png'
 category: test
 tags:
   - jasmine
