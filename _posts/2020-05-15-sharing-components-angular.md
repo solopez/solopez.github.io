@@ -2,10 +2,8 @@
 date: 2020-05-24 12:26:40
 layout: post
 title: Codeando en Angular!
-subtitle: Compartiendo componentes.
-description: Compartiendo componentes.
+description: Compartiendo componentes
 image: 'assets/img/angular-components.jpg'
-optimized_image: 'assets/img/angular-components.jpg'
 category: code
 tags:
   - angular
