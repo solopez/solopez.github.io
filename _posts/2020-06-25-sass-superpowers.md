@@ -33,9 +33,9 @@ Nuestra paleta de colores en los proyectos suele ser chica/mediana, pero igualme
     $nepal: #8B9DBB;
     $crimson: #D51A49;
 
-Asimismo, podemos aplicar estas variables para cualquier valor que se nos ocurra, por ejemplo $grid, $margins, $flex-property, $base-width, lo vamos a ver más claro en la seccion *Mixins* del próximo post! 
+Asimismo, podemos aplicar estas variables para cualquier valor que se nos ocurra, por ejemplo $grid, $font-size, $margins, $flex-property, $base-width, el nombre de la variable lo elegimos nosotros como siempre, pero la idea es ver un poco qué tan flexible y útil puede ser para nuestros estilos implementar valores dinámicos de ciertos aspectos, lo vamos a ver más claro y en detalle en la seccion *Mixins* del próximo post! 
 
-Pero para que apreciemos el concepto y poder, podemos pensar en un re-branding o theming de un proyecto, modificar cada hexa y color sería un dolor de cabeza, ni hablar de cambios visuales a nivel pixeles generales.. en cambio, si usamos variables unificadas en los layouts, un theming o personalización de diseño sería mucho más simple, ágil y flexible de implementar y escalar.
+Para que apreciemos el concepto y powaaaa, podemos pensar en un re-branding o theming de un proyecto, modificar cada hexa y color sería un dolor de cabeza, ni hablar de cambios visuales a nivel pixeles generales.. en cambio, si usamos variables unificadas en los layouts, un theming o personalización de diseño sería mucho más simple, ágil y flexible de implementar y escalar.
 
 ![enter image description here](https://media1.tenor.com/images/07c478f6cc6565d81a83c59e1dd1298f/tenor.gif?itemid=16352703)
 
