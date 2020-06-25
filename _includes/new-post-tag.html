@@ -1,4 +1,4 @@
-{% capture weekago %}{{ "now" | date: "%s" | minus: 604800 }}{% endcapture %}
+{% capture weekago %}{{ "now" | date: "%s" | minus: 60800 }}{% endcapture %}
 {% capture posttime %}{{ include.date | date: "%s" }}{% endcapture %}
 {% if posttime > weekago %}
 <div class="new-post-tag">{{ site.translations.text.new_post | default: "New Post" }}</div>

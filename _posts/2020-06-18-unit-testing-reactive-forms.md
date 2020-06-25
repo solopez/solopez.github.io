@@ -15,7 +15,7 @@ author: sol lopez
 # Unit testing con Jasmine! 
 ## Metele tests!
 
-Hola! Siguiendo con unit testing.. alguna vez les pasó que los tests que contienen un reactive form no instancian correctamente los controles? Bueno, ya les va a pasar :D
+Hola! Siguiendo con unit testing.. alguna vez les pasó que los tests que contienen un reactive form no instancian correctamente los controles? Bueno, ya les va a pasar :O
 
 A veces nos vamos a encontrar con esta maravilla:
 
@@ -77,3 +77,5 @@ y en el beforeEach:
     fixture.detectChanges();
 
 ![enter image description here](https://i.pinimg.com/originals/39/46/07/394607fdeea1f286afe8a4a0a28ec9fe.png)
+
+By Sol López, frontend, rosarina, baterista, rock & metal.
