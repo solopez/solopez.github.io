@@ -4,7 +4,7 @@ layout: post
 title: SASS Poderoso!
 description: Bases y experiencias con SASS
 image: 'assets/img/sass.jpg'
-category: test
+category: scss
 tags:
   - sass
   - css
