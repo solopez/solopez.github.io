@@ -34,11 +34,12 @@ Entonces cada vez que necesitemos incluir un titulo en nuestro template, le agre
 
     <h1 class="title">Title</h1>
 
-y vamos a pedirle que renderice ese título con nuestra convención declarada en nuestro mixin´en nuestro **.scss**:
+y vamos a pedirle que renderice ese título con nuestra convención declarada en nuestro mixin en nuestro **.scss**:
 
     .title {
 	    @include title;
     }
+
 Con sólo esa linea ya estamos renderizando las 4 css rules que definimos en nuestro mixin. Cada vez que tengamos un elemento que deseemos renderizar con las características de ese title, solo escribimos *@include title;*  y la magia sucede 
 ![enter image description here](https://img.vixdata.io/pd/jpg-large/es/sites/default/files/s/smart-meme.jpg)
     
@@ -52,21 +53,24 @@ Si por ejemplo queremos mantener nuestra estructura de títulos pero queremos qu
 	    color: $color;
 	    font-weight: bold;
     }
+
 ![enter image description here](https://i.pinimg.com/originals/b1/c7/2f/b1c72f820b855a5aa0c65840eb07fe37.jpg)
 
 Alllllta magia ahí... con eso recien hicimos que nuestro mixin esté preparado que un color de título por defecto (azul). Y, si le pasamos otro color desde otra página con otro css seguiremos reutilizando nuestro mixin dinámico:
 
-      .title {
-    	    @include title(red);
-        }
+    .title {
+        @include title(red);
+    }
 
 A su vez, podemos crear otro pequeño mixin de complemento:
 
-    @mixin bottom-line($color: blue, $margin: 1rem, $padding: 1rem 0;) {
+    @mixin bottom-line($color: blue, $margin: 1rem, $padding: 1rem 0) {
 	    margin: $margin;
         border-bottom: 3px solid  $color;
         padding: $padding;
     }
+
+
 De esa forma si tenemos otro título que si queremos que dibuje una línea debajo del título, con nuestro mixin ya creado, solo debemos escribir:
 
     .title {
@@ -84,11 +88,10 @@ Siiii satamente! Podemos anidar e incluir otros mixins dentro de nuestro mixin s
 	    text-decoration:  underline;
 	    cursor: pointer;
 	    &:hover {  
-			background-color:  $hover-color;  
-		}
+		background-color:  $hover-color;  
+	    }
 	}
        
-
  Lo creamos como mixin porque la idea es usarlo estas reglas de link en cualquier elemento, no sólo en los títulos.
 
 
@@ -120,18 +123,17 @@ A medida que vamos definiendo las reglas de nuestro proyecto, podemos ver qué t
 De esa manera solo invocaríamos al mixin title, si es que siempre queremos incluir por defecto los otros mixins (de special-link, bottom-line, etc) y nos evitamos agregar siempre los mismos 2 o 3 mixins cada vez que decoramos un título.
 
 De hecho si empezamos a notar que casi siempre incluimos los mismos mixin a los mismos elementos, lo ideal es anidarlos directamente en el mixin y podemos meter una lógicaaaa para los casos en los que no los queremos... que pasó? te quedaste de cara????
+
 ![enter image description here](https://pbs.twimg.com/media/EPontr9W4AADjys.jpg)
 
 ## Argumentos
 
 Veamos como quedaría!!!
 
-    @mixin title($color: blue, 
-			     $hover-color, $size: 30px,  
-			     $include-specials: true) {
+    @mixin title($color: blue, $hover-color, $size: 30px, $include-specials: true) {
 	    @if ($include-specials) {
 	        @include special-link($hover-color);
-	        @include bottom-line(red, 2rem, 1rem);
+	        @include bottom-line(red);
 	    }
 	    font-size: $size...
 	    blabla...
@@ -147,7 +149,7 @@ Ahora en nuestras clases nos queda elegir cuando deseemos que los special mixins
 ![enter image description here](https://www.mememaker.net/api/bucket?path=static/img/memes/full/2017/Feb/4/0/beleza-boa-noite.jpg)
 
 ## @content
-Así como en **Angular** tenemos ***content projection*** o ***transclusion*** con **ng-content**, aca tenemos algo parecido! con *@content* lo que hacemos es permitir proyectar otros bloques de código en un bloque css por ej, veamos:
+Así como en [ANGULAR](https://angular.io) tenemos ***content projection*** o ***transclusion*** con **ng-content**, aca tenemos algo parecido! con *@content* lo que hacemos es permitir proyectar otros bloques de código en un bloque css por ej, veamos:
 
     @mixin small($width: 320px) {
         @media only screen and (min-width: $width) {
@@ -178,23 +180,28 @@ Así como en **Angular** tenemos ***content projection*** o ***transclusion*** c
 	    bla bla
 	    ...
     }
+
     @include desktop(360px) {
 	    ble ble
 	    ...
     }
+
 Al tener nuestro **@content** en un mixin, podemos ahorrarnos las media queries que después de mucho tiempo pueden ser muy tediosas, tener que escribirlas en cada css, o en cada clase es un poco mucho jajajaja de esta forma solo escribimos include small..o lo que sea que le pongamos, eso es elección de tu dev favorito :D
 
 Asimismo, como vinimos viendo hasta ahora, podríamos tranquilamente incluir estos mixins del tipo media query en nuestros propios mixins, para que una vez que invoquemos nuestros mixins, no debamos preocuparnos del breakpoint ya que el mixin automáticamente se adaptará a cada escenario.
+
 ![enter image description here](https://media2.giphy.com/media/ZF40pid2AozVC/giphy.gif)
 
 ## #experiencia
 
 El otro día tuve que renderizar unas marcas muy visuales dentro de una pantalla, recuerdo que eran como 4 marcas, muy muuuuy similares, cassssi iguales pero que las diferenciaba la posicion de cada una, que hice? sale mixinnnn con fritas po favo 
+
 ![enter image description here](data:image/jpeg;base64,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)
 
 Pude renderizar las 4 marks con algo como:
 
     @include mark($top, $left);
+
 y listooo, realmente me ahorré todo el css de las marcas en sí, y solo le pasaba como dinámica la posición. Tirate un mixin daaaale
 
 ## Conclusión
