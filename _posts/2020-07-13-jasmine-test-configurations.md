@@ -89,7 +89,7 @@ y luego en el beforeEach lo agregamos, nos quedaría:
 En nuestro HomeService seguramente tendremos nuestros metodos y variables de clase propios del servicio que hayamos creado, pero para que el componente home se cree, sólo necesitamos mockear, en primera instancia, los metodos/properties que estemos usando en el ciclo ngOnInit() de nuestro componente.
 Con un Spy nos quedaría:
 
-    getContentSpy = spyOn(homeService, 'getContentSpy ');
+    getContentSpy = spyOn(homeService, 'getContent');
 
 y listo, si nosotros estamos haciendo un this.homeService.getContent(); en nuestro onInit, el spy anterior funcionará mockeando ese método para que el componente pueda crearse.
 
@@ -103,7 +103,7 @@ Para aplicar este método solo tenemos que crear un archivo y exportar esta clas
 
     export class HomeServiceStub {
         getContent(): void {
-           return 'hola';
+           return 'holis';
         }
     }
 
