@@ -52,6 +52,7 @@ Cual es la diferencia?
 Si miras el codigo fuente de una app Angular normal vas a ver solo los meta tags, scripts, links etc PERO vas a ver el 
 
     <sc-root></sc-root>
+
 donde la app de Angular descansa (?) asi que no se ve nada.
 Si miramos el codigo fuente de una app con Angular Universal, vamos a poder visualizar que hay dentro del root, vamos a ver body, divs, span, p, etc todo nuestro contenido HTML vamos a poder verlo!
 
@@ -82,10 +83,10 @@ Aca van los puntos mas importantes, chequeate todo esto que lo sacas andandoooo
                 ModuleMapLoaderModule
 Ahora queda asi:
 
-        @NgModule({
-            imports: [
-                 AppModule,
-                 ServerModule
+          @NgModule({
+           imports: [
+                AppModule,
+                ServerModule
  
  Y tambien borra el import
 
@@ -100,6 +101,7 @@ Ahora queda asi:
     const win = domino.createWindow(template);    
     global['window'] = win;    
     global['document'] = win.document;
+
 **3-** En **main.server.ts** tenes que borrar lo siguiente
 
     export { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
@@ -115,6 +117,7 @@ De paso chequea y confirma que en este archivo tengas esta linea que funciona co
     "files": [    
      "src/main.server.ts",    
      "server.ts"
+
 **5-** En Angular cli, verificar la config del serve local
 **"serve-ssr"**
 
@@ -137,6 +140,7 @@ De paso chequea y confirma que en este archivo tengas esta linea que funciona co
 	    "browserTarget": "{{APP_NAME}}:build:{{ENVIRONMENT_BUILD_OBJECT}}",    
 	    "serverTarget": "{{APP_NAME}}:server:{{ENVIRONMENT_BUILD_OBJECT}}"    
     }
+
 **6-** En Angular cli, verificar config del **"server"** 
 
     "server": {    
@@ -158,6 +162,7 @@ De paso chequea y confirma que en este archivo tengas esta linea que funciona co
     "optimization": true
     ...    
     },
+
 
 **7-** En Angular cli, verificar config del **"prerender"** 
 
