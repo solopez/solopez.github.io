@@ -21,7 +21,7 @@ Holissss como estan??? Hoy quiero dedicarle este post a nuestro amigo Angular Un
 ![enter image description here](https://i.imgflip.com/433lvu.jpg)
 
 ## Qué es
-Angular Universal es la tecnologia que nos permite ejecutar nuestras app en Angular del lado del servidor, SSR (*Server Side Rendering*). SI, leiste bien. Estamos acostumbrados toda la vida (toda la vida? que le pasa?) a que las aplicaciones las construimos y servimos del lado del cliente (Javascript, con o sin tu framework favorito). PERO, Angular Universal nos promete construir nuestra aplicación y servirla directamente desde el servidor. 
+Angular Universal es la tecnologia que nos permite ejecutar nuestras apps en Angular del lado del servidor, SSR (*Server Side Rendering*). SI, leiste bien. Estamos acostumbrados toda la vida (toda la vida? que le pasa?) a que las aplicaciones las construimos y servimos del lado del cliente (Javascript, con o sin tu framework favorito). PERO, Angular Universal nos promete construir nuestra aplicación y servirla directamente desde el servidor. 
 
 **Cómo?** 
 Bueno básicamente nos ayuda a implementar ciertas características para que apliquemos en nuestras app y podamos **prerenderizar** , es decir, generamos HTML estaticos con todos los datos listos (por ejemplo con las respuestas de los servicios ya mockeados y demas hierbas) y eso lo servimos de una! 
@@ -30,7 +30,7 @@ Bueno básicamente nos ayuda a implementar ciertas características para que apl
 Nuestra aplicación tendrá altisimaaaaa velocidad en la carga inicial de esas paginas y rutas donde apliquemos la prerenderizacion y los HTML estaticos. Como estamos sirviendo ya el HTML, no estamos esperando ni las ejecuciones de llamadas a servicios, ni sus respuestas, nada de promesas ni observables, nada de nada, HTML y chau)
 
 **Qué hacemos con los datos dinámicos?**
-No tenés que preocuparte por eso, ya que una vez que cargaste la app, ves el prerenderizado de Angular Universal pero luego ante un evento ANGULAR **toma control total** y tu app sigue funcionando como siempre (con las llamadas a servicios, contenidos dinamicos, data binding, carga y renderizado dinamico, todo normal como siempre).
+No tenés que preocuparte por eso, ya que una vez que cargaste la app, ves el prerenderizado de Angular Universal pero luego ante un evento, ANGULAR **toma control total** y tu app sigue funcionando como siempre (con las llamadas a servicios, contenidos dinamicos, data binding, carga y renderizado dinamico, todo normal como siempre).
 Vos podes elegir si sólo prerenderizar el index.html de la carga inicial de tu app, y tambien elegir qué rutas queres que tengan ese prerenderizado y cuales no.
 
 ## Configuración Fresh Starter
