@@ -14,8 +14,6 @@ author: sol lopez
 
 ---
 
-# Angular Universal
-
 Holissss como estan??? Hoy quiero dedicarle este post a nuestro amigo Angular Universalllll. Si ya trabajaste con Angular Universal y pensas migrar, o si queres saber que es para decidir si aplicarlo o no en tu app oooooooo si te está haciendo renegar porque te dicen que es fácil pero no es taaaan asi puesss este post es para usted!
 
 ![enter image description here](https://i.imgflip.com/433lvu.jpg)
