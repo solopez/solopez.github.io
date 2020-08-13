@@ -182,6 +182,13 @@ De paso chequea y confirma que en este archivo tengas esta linea que funciona co
 	    ]    
     },
 
+
+**8-** Si te surgen algunos problemas o errores de tipado cuando corres el server.ts, podes probar con estas versiones de universal y express que actualmente funcionan sin errores:
+
+    "@nguniversal/builders": "^10.0.0-rc.1",
+    "@types/express": "^4.17.0"
+
+
 ## Deploys
 
 Para deployar SSR vas a necesitar que se corran los comandos del build SSR, server SSR y tambien del prerender.
