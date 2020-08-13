@@ -185,15 +185,18 @@ De paso chequea y confirma que en este archivo tengas esta linea que funciona co
 ## Deploys
 
 Para deployar SSR vas a necesitar que se corran los comandos del build SSR, server SSR y tambien del prerender.
+
 Si tenés más de un ambiente configurado, necesitas agregar en las config de esas operaciones (build, server y prerender) arriba mencionadas por cada entorno, y en los comandos hacer uso de esas variables para deployar la build correspondiente.
+
 Si podes mover los archivos que quedan en *dist/browser* a la carpeta donde se deploya tu app, eso es todo. En caso de que no puedas, deberás correr node dist/server/main.js en un server node para poder levantarlo.
+
 Por último, en caso de que necesites que tu build (sea o no SSR) se compile y deploye en una carpeta x, recorda que podes configurarlo en Angular cli asi:
 
     "architect": {
-        "build": {
-		    "options": {    
-			    "baseHref": "/app_folder/",    
-			    "deployUrl": "/app_folder/",
+      "build": {
+	    "options": {    
+	      "baseHref": "/app_folder/",    
+	      "deployUrl": "/app_folder/",
 
 
 
