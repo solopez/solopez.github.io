@@ -125,7 +125,7 @@ Del otro lado lo mismo, pero con las contraseñas
         //tambien podemos usar new FormControl()
     })}
 
-De esta forma ambos groups quedan asociado solo a esos componentes, nunca al padre.
+De esta forma ambos groups quedan declarados solo en esos componentes, nunca en el padre.
 
 Y lo mas importante, bindeamos el control (nuestro form group del hijo) hacia el form padre (el que recibimos via @Input():
 ```
@@ -141,7 +141,8 @@ Implementarlo con este metodo es limpio, legible y sencillo.
 Nos evitamos los valueChanges
 OnChanges
 Viewchilds
-Detectionss y mas changes que tanto cuesta en performance sobre todo subscribirnos a tantos eventos y changesss no more changesss
+Outputs y Event emitters
+Detectionss y mas changes que tanto cuesta en performance sobre todo subscribirnos a tantos eventos y changesss no more changesss #lessonlearnt
 ![enter image description here](https://www.mememaker.net/api/bucket?path=static/img/memes/full/2017/Feb/22/9/changes-changes-everywhere7.jpg)
 
 
@@ -152,7 +153,7 @@ Metodo 2
 
  @ViewChild de nuestro componente formulario hijo, algo como: ([Viewchild link oficial](https://angular.io/api/core/ViewChild))
 
-    ```@ViewChild(ChildComponent) childComponent: ChildComponent;```
+    @ViewChild(ChildComponent) childComponent: ChildComponent;
 
 Lo malo de esto es que por cada valor que cambia el control, subscribirnos al changes desde el hijo hacia el padre tiene que ser con algun emitter del valueChanges o algo similar. Hay muchos ejemplos de como se implementa pero... Neeeeext
 
