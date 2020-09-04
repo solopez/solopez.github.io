@@ -112,17 +112,17 @@ y en los TS, lo mas importante es que tengamos declarado nuestros FormGroup con 
        ngOnInit()  {
        
        this.form =  this.fb.group({
-         firstName: ['', Validators.required],
-       	 lastName: ['', Validators.required],
-       	 email: ['', Validators.required]
+            firstName: ['', Validators.required],
+            lastName: ['', Validators.required],
+            email: ['', Validators.required]
        })}
 
 Del otro lado lo mismo, pero con las contraseñas
 
     this.form =  this.fb.group({
- 	  password: ['', Validators.required], 
-      confirmPassword: ['', Validators.required],
-      //tambien podemos usar new FormControl()
+        password: ['', Validators.required], 
+        confirmPassword: ['', Validators.required],
+        //tambien podemos usar new FormControl()
     })}
 
 De esta forma ambos groups quedan asociado solo a esos componentes, nunca al padre.
