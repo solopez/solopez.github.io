@@ -232,3 +232,4 @@ Durante esta migracion de compatibilidad entre Universal  e Ivy, no encontre tan
 
 [Blog Universal y Angular 9](https://medium.com/@mugan86/server-side-rendering-con-angular-universal-9-9fdf33d03f4d)
 
+By Sol López, frontend, rosarina, baterista, rock & metal.
