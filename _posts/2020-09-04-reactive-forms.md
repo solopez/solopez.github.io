@@ -43,8 +43,10 @@ Imaginen que en lugar de crear N formularios asi
     
       <label for="email">Email</label>
       <input formControlName="email" type="email" id="email" />
+
       <label for="pwd">paswwordddd</label>
       <input formControlName="paswwordddd" type="password" id="password" />
+
       <label for="confirm">confirma el paswwordddd</label>
       <input formControlName="otropassworddd" type="passwotd" id="confirm-pwd" />
       
@@ -54,8 +56,8 @@ Comencemos a desarrollar solo los formularios/controles nuevos, el resto los reu
 
 ```html
 <form [formGroup]="signupForm" (ngSubmit)="submit()">
-  <app-profile-form [form]="signupForm" formControlName="profile"></app-profile-form>
-  <app-password-form [form]="signupForm" formControlName="password"></app-password-form>
+  <app-profile-form [form]="signupForm"></app-profile-form>
+  <app-password-form [form]="signupForm"></app-password-form>
  ```
  
 Queda fachera facherita no?
@@ -88,30 +90,31 @@ Siguiendo el ejemplo del form anterior, tendremos 2 componentes, con sus 2 html 
     
       <label for="email">Email</label>
       <input formControlName="email" type="email" id="email" />
-      </div>
+    </div>
   ````
 
       
    ```html    
     <div [formGroup]="form">
-    <label for="pwd">paswwordddd</label>
-    <input formControlName="paswwordddd" type="password" id="password" /> 
-    <label for="pwdd2">confirma el paswwordddd</label> 
-    <input formControlName="otropassworddd" type="password" id="confirm-password" />
+      <label for="pwd">paswwordddd</label>
+      <input formControlName="paswwordddd" type="password" id="password" /> 
+
+      <label for="pwdd2">confirma el paswwordddd</label> 
+      <input formControlName="otropassworddd" type="password" id="confirm-password" />
     </div>
     
 `````
 
 y en los TS, lo mas importante es que tengamos declarado nuestros FormGroup con sus controles:
 
-   
+    group: FormGroup;
     @Input() form:  FormGroup;
        
        constructor  (private fb:  FormBuilder)  {}
     
        ngOnInit()  {
        
-       this.form =  this.fb.group({
+       this.group =  this.fb.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             email: ['', Validators.required]
@@ -119,7 +122,7 @@ y en los TS, lo mas importante es que tengamos declarado nuestros FormGroup con 
 
 Del otro lado lo mismo, pero con las contraseñas
 
-    this.form =  this.fb.group({
+    this.group =  this.fb.group({
         password: ['', Validators.required], 
         confirmPassword: ['', Validators.required],
         //tambien podemos usar new FormControl()
@@ -132,7 +135,7 @@ Y lo mas importante, bindeamos el control (nuestro form group del hijo) hacia el
 this.form.addControl('profile', this.form);
 ```
 
-    this.form.addControl('password', this.form);
+    this.form.addControl('password', this.group);
 
 
 ## Ventajas
