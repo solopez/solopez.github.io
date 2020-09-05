@@ -43,10 +43,10 @@ Imaginen que en lugar de crear N formularios asi
     
       <label for="email">Email</label>
       <input formControlName="email" type="email" id="email" />
-      <label for="email">paswwordddd</label>
-      <input formControlName="paswwordddd" type="email" id="email" />
-      <label for="email">confirma el paswwordddd</label>
-      <input formControlName="otropassworddd" type="email" id="email" />
+      <label for="pwd">paswwordddd</label>
+      <input formControlName="paswwordddd" type="password" id="password" />
+      <label for="confirm">confirma el paswwordddd</label>
+      <input formControlName="otropassworddd" type="passwotd" id="confirm-pwd" />
       
 ```
 
@@ -94,10 +94,10 @@ Siguiendo el ejemplo del form anterior, tendremos 2 componentes, con sus 2 html 
       
    ```html    
     <div [formGroup]="form">
-    <label for="email">paswwordddd</label>
-    <input formControlName="paswwordddd" type="email" id="email" /> 
-    <label for="email">confirma el paswwordddd</label> 
-    <input formControlName="otropassworddd" type="email" id="email" />
+    <label for="pwd">paswwordddd</label>
+    <input formControlName="paswwordddd" type="password" id="password" /> 
+    <label for="pwdd2">confirma el paswwordddd</label> 
+    <input formControlName="otropassworddd" type="password" id="confirm-password" />
     </div>
     
 `````
