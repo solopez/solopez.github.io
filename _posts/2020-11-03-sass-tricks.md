@@ -13,7 +13,7 @@ author: sol lopez
 ---
 
 # SASS: Tricks & Tips (or treat)
-Holissss como andan??? A pocos días de haber pasado Halloween, el post de hoy va dedicado a [SASS](https://sass-lang.com/)!! Agunos truquillos, magias oscuras y pequeños consejos que si no los conocías, te pueden ser muy útiles a la hora de trabajar con esta magiaaaaa
+Holissss como andan??? A pocos días de haber pasado Halloween, el post de hoy va dedicado a [SASS](https://sass-lang.com/)!! Algunos truquillos, magias oscuras y pequeños consejos que si no los conocías, te pueden ser muy útiles a la hora de trabajar con esta magiaaaaa
 ![enter image description here](https://i.pinimg.com/originals/c8/f1/cb/c8f1cbe1a9bc76adf064b5e5840d918c.jpg)
 
 ## Interpolation
