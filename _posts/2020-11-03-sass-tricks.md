@@ -29,12 +29,12 @@ Para acceder a los valores usando interpolación:
 ## Placeholders
 Para poder extender y reutilizar ciertas reglas en nuestros selectores, podemos definir lo siguiente:
 
-    %color-set-a {
+    %color-test-a {
 	    background-color: $prussian;
 	    color: $crimson;
     }
 
-    %color-set-b {
+    %color-test-b {
 	    background-color: $coral;
 	    color: $perano;
     }
@@ -42,10 +42,10 @@ Para poder extender y reutilizar ciertas reglas en nuestros selectores, podemos 
 Una vez que definimos los placeholders, ya podemos extenderlos donde nos guste. Para eso, vamos a simular que tenemos un contenedor para aplicar el primer placeholder y una alteración del contenedor  (modifier) para el segundo placeholder. Suponiendo para este ejemplo que las clases HTML son container y container--secondary. Veamos como nos queda!
 
     .container {   
-	    @extend %color-set-a;
+	    @extend %color-test-a;
 
         &--secondary {
-          @extend %color-set-b;
+          @extend %color-test-b;
         }
     }
    
@@ -59,9 +59,9 @@ cuando compilemos, nos va a quedar este resultado (los colores a gusto de c/u, c
     .container--secondary {
         background-color: #D2CBF5;
         color: #G2CBF5;
-     }
+    }
 
-
+Si haces A/B testing, te puede servir tener este tipo de modificadores así armaditos!
 *Nota*: en mi caso utilizo [NameThatColor](https://chir.ag/projects/name-that-color) para los nombres!
 
 ## Sufijos
