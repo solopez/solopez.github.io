@@ -14,7 +14,7 @@ author: sol lopez
 
 ---
 
-Holisss bellos mios como estan? (faraona??) 
+Holisss cracksssss como estan?
 Hoy les traigo una pequeña dosis de #codeflix!
 Estos días no encontraba mucha inspiración (?) y ahora digamos que... tampoco 
 
