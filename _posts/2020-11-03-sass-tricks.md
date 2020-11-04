@@ -89,7 +89,7 @@ De esta manera, siempre vamos a tener un color por defecto, para que cuando invo
     @include alert-text();
     @include alert-text($black);
 
-Nota: En el ejemplo vemos color de param, pero podemos pasar lo que definamos en cada mixin, size, margins
+Nota: En el ejemplo vemos color de param, pero podemos pasar lo que definamos en cada mixin, size, margin, width, bla bla y dale que vaaaa
 
 ## Null
 Otra variante interesante hablando de parámetros por default, es cuando usamos null. Si lo aplicamos, el estilo directamente no se va a aplicar a menos que realmente lo necesitemos, está bueno para ahorrarnos reglas que no queremos que se compilen. Veamos!
