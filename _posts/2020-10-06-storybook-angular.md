@@ -83,7 +83,7 @@ Más adelante podemos hacer crecer la story de nuestro componente, agregando nue
 
 Una de las razones por la que storybook es elegido es porque no sólo nos ayuda a crear nuestras app con mayor velocidad, sino que además, permite darnos una rápida visualización de los componentes que tenemos en un repo, ni te cuento si trabajamos en un monorepo, donde la app crece y crece y ya ni sabemos que hay!! Así que nos ayuda a evitar las duplicaciones de código y/o de componentes, incluso cuando creamos nuevos nos da cierta info para que podamos desarrollar pensando en escala.
 
-Otra ventaja muy copada es que nos ayuda a prevenir bugs. Cuando algo se rompe, podemos rápidamente saber si el componente es quien necesita el fix o si hay problemas en la implementando del componente/contexto.
+Otra ventaja muy copada es que nos ayuda a prevenir bugs. Cuando algo se rompe, podemos rápidamente saber si el componente es quien necesita el fix o si hay problemas en la implementación del componente/contexto.
 
 También podemos destacar como ventaja que entre desarrolladores y diseñadores podemos mejorar la coordinación y comunicación teniendo esta herramienta, generando un design system unificado acá mismo.
 
@@ -93,7 +93,7 @@ Claramente hay muchas otras ventajas, en el link oficial que dejé mas arriba se
 
 En resumen, Storybook no sólo nos permite gestionar nuestros componentes visuales, sino también pantallas, datos, testing, features complejas, siempre en los contextos que decidamos definirles.
 
-Bonussss!! Si! Teniendo Storybook podemos ir mas alla e implementar Chromatic, BackStopJS y otras herramientas de preferencia para testear y poder hacer regresiones visuales
+BONUSSSSS!! Si! Teniendo Storybook podemos ir mas alla e implementar Chromatic, BackStopJS y otras herramientas de preferencia para testear y poder hacer regresiones visuales
 
 ![enter image description here](https://ep01.epimg.net/verne/imagenes/2019/05/20/articulo/1558347754_694065_1558348027_noticia_normal.jpg)
 
