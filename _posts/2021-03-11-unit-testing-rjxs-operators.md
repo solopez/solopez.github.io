@@ -37,9 +37,7 @@ en nuestro componente podemos tener llamadas concatenadas, conceptualmente habla
       )
       .pipe(
         concatMap(() => {
-          this.opportunity = response.opportunitiesId;
           return this.service2.method2();
-
         })
       )
       .pipe(
