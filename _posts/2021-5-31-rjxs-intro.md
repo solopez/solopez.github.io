@@ -77,7 +77,7 @@ Por supuesto que hay varios operadores mas, de este tipo y tambien de otras cate
 
 ## Observer y Suscription
 
-**_Subscription_**  nos indica la **ejecución** de un observable. Como dijimos recien, los observables son  **_lazy_**, si tremenos vagos!!!! asi que si no nos suscribimos a ellos, olvidate, no emiten ni un sandwich.
+**_Subscription_**  nos indica la **ejecución** de un observable. Como dijimos recien, los observables son  **_lazy_**, si tremendos vagos!!!! asi que si no nos suscribimos a ellos, olvidate, no emiten ni un sandwich.
 ![enter image description here](https://pbs.twimg.com/media/Etev4m4WgAE2N8Z.jpg)
 
 **_Observer_**  es un objeto que **reacciona** a los valores entregados por el observable. 
