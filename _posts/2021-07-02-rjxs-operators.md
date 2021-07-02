@@ -3,7 +3,7 @@ date: 2021-07-02 15:00:40
 layout: post
 title: RxJS!
 description: Operadores!
-image: 'assets/img/op.png'
+image: 'assets/img/op.jpg'
 category: CODE
 tags:
   - coding
