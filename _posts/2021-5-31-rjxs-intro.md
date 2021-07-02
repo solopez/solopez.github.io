@@ -19,7 +19,7 @@ Creo que este post será el primero de algunos mas seguramente.. y si! RxJS es d
 
 Bueno y si, eran necesarios los 2 memes, sufrimos mucho!
 En fin, te lo explico en criollo, algo asi como una version de "[te lo resumo asi nomas](https://www.youtube.com/channel/UCw7Bz6EHxlnOoBUBlJZCWCw)" pero para codear? Y... ojala que si, seguire insistiendo en posts super cortos que den ganas de leer. 
-La guía oficial de RxJS [aquí](https://www.learnrxjs.io/).
+La guía oficial de RxJS [aquí](https://rxjs.dev).
 Bueno ahi vamos!
 
 ## Que és?
