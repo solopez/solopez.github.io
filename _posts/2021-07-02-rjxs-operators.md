@@ -19,7 +19,7 @@ Repasando brevemente el post anterior, vimos que podemos aplicar distintos opera
 ## Operadores de creación
 
 ### Create
-Creamos un obs que emite hello y world cuando te suscribis con **create**:
+Creamos un obs que emite hola y amigos cuando te suscribis con **create**:
     
     import  { `Observable` }  from  'rxjs';
     const hello = Observable.create((observer)  =>  {
