@@ -55,6 +55,12 @@ Y el parámetro `reports`por -> `reporters`
 
 Referencia de estos cambios [aquí](https://mrjean.be/posts/update-karma-coverage-reporting-for-use-in-angular-11/).
 
+## Tests
+Y siiiii, si venis migrando desde hace un tiempo habras notado que casi siempre hay que arreglar tests :D
+Esta vez no es la excepción PEEEERO tampoco hay que modificar tanto, si tenes algo de suerte... Un poco mas de restricciones en cuanto a tipados y sale con
+![enter image description here](https://cdn.recetas360.com/wp-content/uploads/2019/07/como-hacer-papas-fritas-de-mcdonals.jpg)
+
+
 ## Core-js
 
 Si al momento de buildear (ng build --prod), te encontrás con este otro error:
