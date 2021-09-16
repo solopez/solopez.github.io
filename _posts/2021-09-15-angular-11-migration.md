@@ -75,6 +75,8 @@ Podes fijarte en el polyfills de angular, y los imports que tengas en tu proyect
 a estos:
 `import 'core-js/es/array';`
 
+Nota: modificamos sólo la primer parte (core-js/es)
+
 Si el error persiste, puede que tengas que modificar la versión del paquete de core-js. En mi caso actualicé de la versión 2.6.12 a la 3.6.5.
 
 ## Typescript
