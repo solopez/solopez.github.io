@@ -45,9 +45,13 @@ Si estás usando Karma como test runner en tu proyecto, podrías necesitar modif
 
     npm uninstall karma
     npm install karma karma
+
 Y en **karma.conf.js** lo siguiente:
+
 Cambiamos el 
-`require('karma-coverage-istanbul-report')` por -> 
+
+`require('karma-coverage-istanbul-report')` 
+por -> 
 `require('karma-coverage')`;
 
 `coverageIstanbulReporter` por -> `coverageReporter`
