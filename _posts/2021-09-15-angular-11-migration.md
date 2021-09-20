@@ -43,8 +43,8 @@ Si estás usando Karma como test runner en tu proyecto, podrías necesitar modif
 
  Cambiamos de package:
 
-    npm uninstall karma
-    npm install karma karma
+    npm uninstall karma-coverage-istanbul-report
+    npm install karma karma-coverage
 
 Y en **karma.conf.js** lo siguiente:
 
