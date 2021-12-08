@@ -13,7 +13,7 @@ author: sol lopez
 ---
 # Migración Angular 12
 Buenasss como andan? Siii llegó otra migra, esta vez, toca surfear las olas hacia Angular 12! 
-![enter image description here](https://www.surfertoday.com/images/jamp/page/surfingmeme.jpg)
+![enter image description here](https://www.askideas.com/media/45/Please-Be-Dolphins-Please-Funny-Surfing-Meme-Picture.jpg)
 Como mencionamos en la migra anterior, Angular se actualiza con cierta frecuencia [ver roadmap](https://angular.io/guide/roadmap) y para no perder ritmo, debemos actualizar nuestro código de a poquillo.
 
 El post de hoy va dedicado a las experiencias durante una migración específica desde nuestro previo Angular 11 hacia Angular 12, con errores y warnings y sus respectivas soluciones!
