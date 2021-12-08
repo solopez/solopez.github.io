@@ -3,7 +3,7 @@ date: 2021-12-08 15:00:40
 layout: post
 title: Angular 12!
 description: Migración a Angular 12!
-image: 'assets/img/angular12.jfif'
+image: 'assets/img/angular12.png'
 category: CODE
 tags:
   - coding
