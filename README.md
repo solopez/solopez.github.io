@@ -1,1 +1,1 @@
-Blog using theme made by Thiago, jekflix.
+Online blog https://solopez.github.io/ for JS devs! 
