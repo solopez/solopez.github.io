@@ -13,4 +13,5 @@ show_hero: true
 menu:
   - title: Home
     url: /
-
+  - title: My Github
+    url: https://github.com/solopez
