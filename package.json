@@ -1,12 +1,12 @@
 {
-  "name": "jekflix-template",
+  "name": "Sol Lopez - Blog",
   "version": "3.1.0",
   "description": "A Jekyll theme inspired by Netflix",
   "main": "gulpfile.js",
-  "homepage": "https://github.com/thiagorossener/jekflix-template.git#readme",
+  "homepage": "https://github.com/solopez",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thiagorossener/jekflix-template.git"
+    "url": "https://github.com/solopez"
   },
   "keywords": [
     "jekyll",
