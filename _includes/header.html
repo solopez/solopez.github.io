@@ -1,13 +1,14 @@
 <header class="bar-header">
-    <a id="menu" role="button">
-        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
-    </a>
-    <h1 class="logo">
-
-    </h1>
+  <a id="menu" role="button">
+    <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+  </a>
+  {% assign url_language = page.url | split: "/" %}
+  <div class="languages">
+    <a class="languages__link {% if url_language[1] == 'en'  %} highlight-language {% endif %}" href="/en">English</a>  
+    <a class="languages__link {% if url_language[1] == 'es'  %} highlight-language {% endif %}" href="/es">Español</a>
+  </div>
 </header>
 
 <div id="mask" class="overlay"></div>
 
-{% include menu.html %}
-{% include search.html %}
+{% include menu.html %} {% include search.html %}

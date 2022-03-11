@@ -1,5 +1,6 @@
 name: CODEFLIX | Sol Lopez
 title: CODEFLIX | Sol Lopez
+language: en
 description: 
 tags:
   - blog
@@ -7,7 +8,7 @@ tags:
   - jekyll
   - angular
   - codeflix
-email: test@xyz.com
+email: ingsollopez@gmail.com
 disqus_username: sol
 show_hero: true
 menu:
