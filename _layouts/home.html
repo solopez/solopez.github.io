@@ -24,13 +24,10 @@ layout: main
     {% endif %}
     <!-- Posts -->
     <section id="grid" class="row flex-grid">
-        {% for post in posts %}
+        {% assign url_language = page.url | replace:'/','' %}
+        {% assign posts = site.posts | where_exp:"post","post.language == url_language " %}
+        {% for post in posts  %}
             <article class="box-item">
-                <span class="category">
-                    <a href="{{ site.baseurl }}/{{ site.categories_folder | default: 'category' }}/{{ post.category }}">
-                        <span>{{ post.category }}</span>
-                    </a>
-                </span>
                 <div class="box-body">
                     <a class="cover" href="{{ post.url | prepend: site.baseurl }}">
                         {% include loader.html %}

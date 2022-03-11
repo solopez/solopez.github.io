@@ -11,6 +11,24 @@ body {
   width: 100%;
   z-index: 10;
   transition: top 0.5s, left 0.3s ease, background-color 0.5s, box-shadow 0.5s;
+
+  .languages {
+    display: inline-flex;
+    justify-content: normal;
+    vertical-align: -webkit-baseline-middle;
+
+    &__link {
+      margin-right: 1rem;
+      color: white;
+      text-decoration: none;
+
+      &.highlight-language {
+        text-decoration: underline;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
   
   @include media(">=sm") {
     padding: rem(15px) rem(0px);
@@ -113,6 +131,11 @@ body.main-page {
 }
 
 body.light:not(.main-page) {
+  .languages {
+    &__link {
+      color: black;
+    }
+  }
   .bar-header {
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.95);

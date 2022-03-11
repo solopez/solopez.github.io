@@ -8,7 +8,7 @@ tags:
   - jekyll
   - theme
   - netlify
-email: youremail@xyz.com
+email: ingsollopez@gmail.com
 disqus_username: disqus_username
 show_hero: true
 menu:
@@ -35,7 +35,8 @@ two_columns_layout: true
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
-language: "en"
+language: "es"
+lang: "es"
 categories_folder: category
 sent_message_url: "/contact/message-sent/"
 
@@ -50,6 +51,7 @@ collections:
 paginate_path: "/page/:num/"
 show_get_theme_btn: true
 use_logo: false
+
 
 # Content paginator
 paginate_content:
@@ -77,6 +79,10 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-paginate-content
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
 
 # Exclude my node related stuff
 exclude: [
@@ -93,3 +99,33 @@ exclude: [
 
 # Theme
 version: v3.1.0
+
+
+
+defaults:
+- scope:
+    path: '_posts/es'
+    type: 'posts'
+  values:
+    permalink: 'es'
+    language: es
+- scope:
+    path: '_posts/en'
+    type: 'posts'
+  values:
+    permalink: 'en'
+    language: en
+- scope:
+    path: '_posts/en'
+    type: 'posts'
+  values:
+    permalink: 'en/:title'
+    language: en
+- scope:
+    path: '_posts/es'
+    type: 'posts'
+  values:
+    permalink: 'es/:title'
+    language: es
+
+
