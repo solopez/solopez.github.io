@@ -46,7 +46,9 @@ Reemplazamos
 por -> 
 `require('karma-coverage')`;
 
+
 `coverageIstanbulReporter` por -> `coverageReporter`.
+
 Y el param `reports` por -> `reporters`.
 
 Detalles: [here](https://mrjean.be/posts/update-karma-coverage-reporting-for-use-in-angular-11/).
