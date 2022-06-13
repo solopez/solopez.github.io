@@ -35,7 +35,7 @@ En caso de que tengas alguna referencia de **whitelistedNonPeerDependencies** en
 Si estas usando Karmita como test runner en tu projecto, necesitas ajustar la configuracion, ya que se deprecó el reporte **coverage-istanbul-reporter** 
 
 
-    npm uninstall karma-coverage-istanbul-report
+    npm uninstall karma-coverage-istanbul-reporter
     npm install karma karma-coverage
 
 Y en **karma.conf.js**:
