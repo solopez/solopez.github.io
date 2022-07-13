@@ -2,7 +2,7 @@
 date: 2022-07-13 15:00:40
 layout: post
 title: Angular 13!
-description: Angular 13 migration
+description: Migración a Angular 13!
 language: es
 image: '../assets/img/angular13.png'
 category: CODE
