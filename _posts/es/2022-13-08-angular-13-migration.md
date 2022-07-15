@@ -55,6 +55,8 @@ Más detalles e info [acá](https://angular.io/guide/migration-module-with-provi
 Si estabas usando RxJS v6.x, hay que instalar manualmente la 7.4: 
 
     npm install rxjs@7.4
+
+
 Para proyectos y apps fresh en esta versión de Angular, instalarán por defecto el rxjs 7.4. 
 Qué hay de nuevo en Rxjs [acá](https://rxjs.dev/6-to-7-change-summary)!
 
@@ -71,6 +73,8 @@ Si estás haciendo un next en un Subject sin params así:
 se puede resolver agregando el type <void> en la declaración de ese Subject:
 
     private subject$ = new Subject<void>();
+
+
 Más info [acá](https://github.com/ReactiveX/rxjs/issues/6324)!
 
 ### Compilermode
@@ -146,6 +150,7 @@ Podes resolverlo agregando esa flag en el tsconfig del proyecto raíz (no storyb
     "allowSyntheticDefaultImports": true,
 	
 Si los problemas de compilation persisten y vemos esto:
+
         ```
     UnhandledPromiseRejectionWarning: TypeError: The 'compilation' argument must be an instance of Compilation
     ```
@@ -159,6 +164,8 @@ Más info [acá](https://github.com/storybookjs/storybook/discussions/17232)!
 Si aún vemos este maldito:
 
     UnhandledPromiseRejectionWarning: TypeError: The 'compilation' argument must be an instance of Compilation
+
+
 Vamos a tener que revisar y verificar las versiones de webpack de angular y webpack de storybook, para eso seguimos estos pasos:
 
     1.  `npm ls webpack`
@@ -185,9 +192,11 @@ Para empezar, en mi experiencia migré todo jest a estas nuevas versiones:
 Para migrar y actualizar nuestro jest.config.js por comando npm ejecutamos: 
 
     npx ts-jest config:migrate jest.config.js
+
 Otras formas de ejecutarlo [acá](https://kulshekhar.github.io/ts-jest/docs/migration/):
 
 En mi experiencia tuve este error:
+
 `Need to call TestBed.initTestEnvironment() first`
 
 y este otro:
@@ -234,7 +243,9 @@ Desde el [blog oficial](https://blog.angular.io/angular-v13-is-now-available-cce
 
  - Temas de accesibilidad: si usas Angular Material, hay varias mejoras de accesibilidad! Todos los detalles [acá](https://blog.angular.io/improving-angular-components-accessibility-89b8ae904952)
  - Inline Fonts: Desde Angular 11 se le dio soporte inline a Google Fonts. En esta versión 13, extienden el soporte a Adobe Fonts.
- - Cambios y contribuciones de la comunidad: entre ellos cambios para activar/desactivar validators en dynamic forms, y la restauración del history del browser en el RouterModule mediante `  {  canceledNavigationResolution: 'computed'  },`
+ - Cambios y contribuciones de la comunidad: entre ellos cambios para activar/desactivar validators en dynamic forms, y la restauración del history del browser en el RouterModule mediante
+
+ `  {  canceledNavigationResolution: 'computed'  }`
  
 Espero les haya servido, happy coding!!!
 ![enter image description here](https://images-na.ssl-images-amazon.com/images/I/517S+mNAxOL.jpg)
