@@ -11,7 +11,12 @@ body {
   width: 100%;
   z-index: 10;
   transition: top 0.5s, left 0.3s ease, background-color 0.5s, box-shadow 0.5s;
+  text-align: center;
 
+  @include media(">=sm") {
+    display: flex;
+  }
+  
   .languages {
     display: inline-flex;
     justify-content: normal;
@@ -21,6 +26,7 @@ body {
       margin-right: 1rem;
       color: white;
       text-decoration: none;
+      align-self: center;
 
       &.highlight-language {
         text-decoration: underline;
@@ -82,7 +88,17 @@ body {
     fill: $accentDark;
 
     @include media(">=sm") {
-      margin: rem(5px) rem(20px) rem(5px) rem(25px);
+      margin: rem(9px) rem(20px) rem(5px) rem(25px);
+    }
+  }
+
+  .coffee-or-beer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    @include media(">=sm") {
+      display: flex;
     }
   }
 
@@ -169,5 +185,15 @@ body.light:not(.main-page) {
   &.show {
     pointer-events: auto;
     opacity: 1;
+  }
+}
+
+.coffee-or-beer-mobile {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+
+  @include media(">sm") {
+    display: none;
   }
 }
