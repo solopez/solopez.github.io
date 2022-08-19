@@ -195,6 +195,9 @@ To migrate and update our jest.config.js by npm command we execute:
 
 Other ways [here](https://kulshekhar.github.io/ts-jest/docs/migration/):
 
+Also, you may need to follow these steps to migrate according to the [changelog](https://changelogs.md/github/thymikee/jest-preset-angular/) 
+
+
 I've seen this one:
 
 `Need to call TestBed.initTestEnvironment() first`
@@ -223,6 +226,20 @@ If you see this:
     [Package subpath './src/ngtsc/reflection' is not defined by "exports" in /node_modules/@angular/compiler-cli/package.json](https://stackoverflow.com/questions/70306517/package-subpath-src-ngtsc-reflection-is-not-defined-by-exports-in-node-mo)
 
 You could check if the jest versions need another change as they indicate [here](https://stackoverflow.com/questions/70306517/package-subpath-src-ngtsc-reflection-is-not-defined-by-exports-in-node-mo).
+
+Another error I found was:
+
+```
+Cannot configure the test module when the test module has already been instantiated. Make sure you are not using `inject` before `R3TestBed.configureTestingModule`
+```
+
+To fix it, you would need to add the teardown to your tests under configureTestingModule like:
+
+```
+teardown: { destroyAfterEach: false },
+```
+
+More info [here](https://dev.to/this-is-angular/improving-angular-tests-by-enabling-angular-testing-module-teardown-38kh)!
 
 
 ## Advantages and changes in this version
