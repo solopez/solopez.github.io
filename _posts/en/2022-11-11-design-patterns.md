@@ -1,8 +1,8 @@
 ﻿---
 date: 2022-11-11 9:00:40
 layout: post
-title: Patrones de diseño!
-description: En el post de hoy explicación y ejemplos de patrones de diseño.
+title: Design patterns!
+description: Concepts, theory and simple samples of design patterns.
 language: en
 image: '../assets/img/design_patterns.png'
 category: CODE
@@ -46,7 +46,7 @@ The SOLID principles is a set of **five principles** suitable for object-oriente
  
  2. Open-closed: Each class must be open for extension, but closed for modification. It should be possible to extend the functionality only by adding code but without changing the existing code. This is to minimize the risk of breaking the logic.
 
- Liskov substitution: If B and C are implementations of A, then B and C must be interchangeable without affecting program execution. The implementations of B and C must have the same functions, signatures and types in order to be interchangeable. (Example: strategy pattern that we can go deeper into in another post)
+ 3. Liskov substitution: If B and C are implementations of A, then B and C must be interchangeable without affecting program execution. The implementations of B and C must have the same functions, signatures and types in order to be interchangeable. (Example: strategy pattern that we can go deeper into in another post)
   ![enter image description here](https://blog.codavel.com/hubfs/Imported_Blog_Media/LiskovSubtitutionPrinciple_Simon.jpg)
 
  4. Interface segregation principle: If B and C are implementations of A, then B and C must actually be able to implement the functions described in interface A. When executing our program we should not check if the implementation can activate this method. If this is the case, the solution is to split into several interfaces.
@@ -67,6 +67,92 @@ The inheritance offered by object-oriented programming can create tightly couple
 To put it in Creole, we can have products, which can be stored in boxes. And in turn, have boxes inside other boxes. If you have a case with multiple objects using the same interface, this may be the pattern that helps you to simplify the interaction between them.
 
 Let's go to the code (references [here](https://blog.bitsrc.io/design-patterns-in-typescript-e9f84de40449))
+
+
+    interface IProduct {
+	    getName(): string
+        getPrice(): number
+    }
+    
+    //The "Component" entity
+    
+    class Product implements IProduct {
+    
+    private price:number
+    
+    private name:string
+    
+    constructor(name:string, price:number) {
+    
+    this.name = name
+    
+    this.price = price
+    
+    }
+    
+    public getPrice(): number {
+    
+    return this.price
+    
+    }
+    
+    public getName(): string {
+    
+    return this.name
+    
+    }
+    
+    }
+    
+    //The "Composite" entity which will group all other composites and components (hence the "IProduct" interface)
+    
+    class Box implements IProduct {
+    
+    private products: IProduct[] = []
+    
+    contructor() {
+    
+    this.products = []
+    
+    }
+    
+    public getName(): string {
+    
+    return "A box with " + this.products.length + " products"
+    
+    }
+    
+    add(p: IProduct):void {
+    
+    console.log("Adding a ", p.getName(), "to the box")
+    
+    this.products.push(p)
+    
+    }
+    
+    getPrice(): number {
+    	    return this.products.reduce( (curr: number, b: IProduct) => (curr + b.getPrice()), 0)
+        }
+    }
+    
+    //Using the code...
+    
+    const box1 = new Box()
+    
+    box1.add(new Product("Bubble gum", 0.5))
+    
+    box1.add(new Product("Samsung Note 20", 1005))
+    
+    const box2 = new Box()
+    
+    box2.add( new Product("Samsung TV 20in", 300))
+    
+    box2.add( new Product("Samsung TV 50in", 800))
+    
+    box1.add(box2)
+    
+    console.log("Total price: ", box1.getPrice())
+
 
 ## Lazy pattern
 
