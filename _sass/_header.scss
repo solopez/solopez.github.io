@@ -99,6 +99,7 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 
     @include media(">=sm") {
       display: flex;
