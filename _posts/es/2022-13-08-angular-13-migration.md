@@ -4,7 +4,7 @@ layout: post
 title: Angular 13!
 description: Migración a Angular 13!
 language: es
-image: '../assets/img/angular13.png'
+image: "../assets/img/angular13.png"
 category: CODE
 tags:
   - coding
@@ -22,6 +22,7 @@ El post de hoy va dedicado a las experiencias durante una migración específica
 ![enter image description here](https://media.makeameme.org/created/Needs-to-upgrade.jpg)
 
 ## Guía
+
 Para empezar vamos a la guía oficial [aquí](https://update.angular.io/?l=3&v=12.0-13.0). En este caso, viniendo de la versión 12, no necesitamos aplicar cambios en nuestro código ANTES de ejecutar el comando para poder migrar. Por lo tanto, podemos arrancar:
 
     ng update @angular/core@13 @angular/cli@13
@@ -29,64 +30,77 @@ Para empezar vamos a la guía oficial [aquí](https://update.angular.io/?l=3&v=1
 Nota: agregar el --force si es necesario! Hasta ahora en cada migra parece que lo pide a gritos!
 ![enter image description here](https://media.makeameme.org/created/the-force-is-3cdf009ad5.jpg)
 
-La mayoría de cambios requeridos los aplicamos con el comando. 
+La mayoría de cambios requeridos los aplicamos con el comando.
 El resto de posibles cambios que tengas que hacer, dependerán como siempre del proyecto en el que estés trabajando y esta guía es para esos cambios manuales, allá vamos!
 También vas a ver diferencias en cuanto a si estás trabajando en una app, o en una librería publicable por el tipo de compilación, que vamos a ver más adelante.
 
 ### ModuleWithProviders migration
+
 Si tenés modulos con providers implementando ModuleWithProviders, puede que el schematic no pueda determinar el type, por lo cual es necesario migrar aquellos que requieran el type así:
 
+```typescript
     @NgModule({…})
     export class MyModule {
       static forRoot(config: SomeConfig): ModuleWithProviders<SomeModule> {
-	    return {
-	      ngModule: SomeModule,
-	      providers: [
-	        {provide: SomeConfig, useValue: config }
-	      ]
-	    };
+        return {
+          ngModule: SomeModule,
+          providers: [
+            {provide: SomeConfig, useValue: config }
+          ]
+        };
       }
     }
+```
 
 Más detalles e info [acá](https://angular.io/guide/migration-module-with-providers)!
 
 ### Rxjs
+
 ![enter image description here](https://miro.medium.com/max/1400/1*ZUENlsi796hIv9TNeqJ3bA.png)
-Si estabas usando RxJS v6.x, hay que instalar manualmente la 7.4: 
+Si estabas usando RxJS v6.x, hay que instalar manualmente la 7.4:
 
+```typescript
     npm install rxjs@7.4
+```
 
-
-Para proyectos y apps fresh en esta versión de Angular, instalarán por defecto el rxjs 7.4. 
+Para proyectos y apps fresh en esta versión de Angular, instalarán por defecto el rxjs 7.4.
 Qué hay de nuevo en Rxjs [acá](https://rxjs.dev/6-to-7-change-summary)!
 
-Por supuesto esto no termina acá, hay algunos breaking changes y algunas deprecaciones que pueden impactar en tu proyecto, suelen resolverse en poco tiempo. 
+Por supuesto esto no termina acá, hay algunos breaking changes y algunas deprecaciones que pueden impactar en tu proyecto, suelen resolverse en poco tiempo.
 Ejemplo :
 
+```typescript
     RxJS 7 allow to call 'next' without parameters (Typescript checks).
-    
+```
+
 Si estás haciendo un next en un Subject sin params así:
 
-    const updateSubject = new Subject();
-    updateSubject.next();
+```typescript
+const updateSubject = new Subject();
+updateSubject.next();
+```
 
 se puede resolver agregando el type <void> en la declaración de ese Subject:
 
+```typescript
     private subject$ = new Subject<void>();
-
+```
 
 Más info [acá](https://github.com/ReactiveX/rxjs/issues/6324)!
 
 ### Compilermode
 
-### Angular library 
+### Angular library
+
 ![enter image description here](https://miro.medium.com/max/1000/1*rCgtilQLYXaua4FH4vxROg.png)
 Si estás trabajando en una library publicable npm, podes encontrar este error:
 
+```typescript
     Unsupported private class
 
 > This class is visible to consumers via SomeModule -> SomeComponent,
 > but is not exported from the top-level library entrypoint
+```
 
 Para resolverlo, tendrás que buscar los componentes y módulos que no están debidamente exportados en la public_api.ts.
 
@@ -96,18 +110,21 @@ Más info de estos errores [acá](https://stackoverflow.com/questions/60121962/t
 Info oficial sobre Angular libraries [acá](https://angular.io/guide/creating-libraries)!
 
 #### Error para Angular library: NG3003: Import cycles would need to be created to compile this component
+
 O también conocido como
 
+```typescript
     One or more import cycles would need to be created to compile this component, which is not supported by the current compiler configuration.
     is used in the template but importing it would create a cycle
+```
 
-Si te topaste con este error cíclico, sólo se da en **angular library**, si no estás trabajando en una library publicable, safaste y te ganaste el pase directo a la próxima sección, fuera! 
-Este error podría significar un cambio de complejidad baja/media según el caso, ya que deberemos tener en cuenta si se trata de un tema de imports con dependencias circulares (complejidad baja) o si necesitamos aplicar refactor (complejidad media no tan barata). 
-Por ejemplo en un caso donde ante ciertas situaciones, componente A embebe a componente B, y donde componente B puede embeber a componente A. 
+Si te topaste con este error cíclico, sólo se da en **angular library**, si no estás trabajando en una library publicable, safaste y te ganaste el pase directo a la próxima sección, fuera!
+Este error podría significar un cambio de complejidad baja/media según el caso, ya que deberemos tener en cuenta si se trata de un tema de imports con dependencias circulares (complejidad baja) o si necesitamos aplicar refactor (complejidad media no tan barata).
+Por ejemplo en un caso donde ante ciertas situaciones, componente A embebe a componente B, y donde componente B puede embeber a componente A.
 Lo más probable es que tengamos que refactorizar si tenemos este último caso.
 La explicación del error y posibles sugerencias para fixearlo desde Angular oficial [acá](https://angular.io/errors/NG3003)!
 
-Esto ocurre por el tipo de compilación, pudiendo ser "partial" o "full" en nuestra   
+Esto ocurre por el tipo de compilación, pudiendo ser "partial" o "full" en nuestra  
 **tsconfig.lib.prod.json.**
 Estando en una library, debemos usar "partial" ya que necesitamos la retrocompatibilidad de los consumidores con o sin Ivy.
 En una app (no library), el tipo de compilación será "full" y no verás este hermoso error jamás.
@@ -115,8 +132,10 @@ Ahora, qué pasaría si estamos trabajando en una Angular library, y manualmente
 
 ![enter image description here](https://i.imgflip.com/6mp8ce.jpg)
 
+```typescript
     ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.
-    Please delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.	
+    Please delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.
+```
 
 La build te va a decir si si dale y cuando corras el `npm publish` te da la bienvenida con ese error de arriba... asi que no, ni lo intentes, compila en "partial" y no pierdas tiempo valioso en esto.
 
@@ -125,21 +144,25 @@ La build te va a decir si si dale y cuando corras el `npm publish` te da la bien
 Salvo que quieras super investigar estos tipos de compilación y los por qué, te dejo este [artículo](https://blog.lacolaco.net/2021/02/angular-ivy-library-compilation-design-in-depth-en/) que esta buenísimo, con gráficos y todo más que claro.
 
 ### Errores/Warnings
-Por lo general y en cada nueva versión de Angular, los errores y/o warnings cada vez son más restrictivos en varios puntos pero también son cada vez más descriptivos, por lo que podrían resolverse desde las mismas sugerencias que ellos nos ofrecen. Es por eso, que preferí enfocar este post a los errores que no son tan fáciles de resolver y también a aquellos que nos lleva más tiempo de análisis e investigación para su resolución. 
+
+Por lo general y en cada nueva versión de Angular, los errores y/o warnings cada vez son más restrictivos en varios puntos pero también son cada vez más descriptivos, por lo que podrían resolverse desde las mismas sugerencias que ellos nos ofrecen. Es por eso, que preferí enfocar este post a los errores que no son tan fáciles de resolver y también a aquellos que nos lleva más tiempo de análisis e investigación para su resolución.
 Recordá siempre correr y compilar el build de production para exterminar los errores que queden pendientes.
 
 ## Storybook
+
 ![enter image description here](https://pbs.twimg.com/tweet_video_thumb/FFiP-v7WYAQW2cP.jpg)
 
 Si en tu proyecto estás usando Storybook, hay una gran migra también con varios ajustes manuales para mantener Storybook actualizado. Lo más importante en esta versión: Habemus compilador de Angular para storybook, asi que desde nuestro angular.json lo vamos a dejar configurado.
 Como siempre sugiero la guía oficial de migración de Storybook:
 
- - Para migrar de 6.3.x a 6.4.x [acá](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-63x-to-640)
- - Para configurar los angular builder y otros cambios de angular 13 [acá](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#sb-angular-builder)
+- Para migrar de 6.3.x a 6.4.x [acá](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-63x-to-640)
+- Para configurar los angular builder y otros cambios de angular 13 [acá](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#sb-angular-builder)
 
 Otra cuestión que me pasó, fue uno de los problemas en la compilación de storybook, de este estilo:
 
+```typescript
     preview.ts is missing from the TypeScript compilation. Please make sure it is in your tsconfig via the 'files' or 'include' property.
+```
 
 Por lo cual tuve que aplicar cambios en el `.storybook/tsconfig.json` para los includes, como [acá](https://github.com/storybookjs/storybook/issues/17039)!
 
@@ -147,35 +170,41 @@ Y si te surge este caso: `can only be default-imported using the'allowSyntheticD
 
 Podes resolverlo agregando esa flag en el tsconfig del proyecto raíz (no storybook como el anterior):
 
+```typescript
     "allowSyntheticDefaultImports": true,
-	
+```
+
 Si los problemas de compilation persisten y vemos esto:
 
-        ```
-    UnhandledPromiseRejectionWarning: TypeError: The 'compilation' argument must be an instance of Compilation
-    ```
+```typescript
+ UnhandledPromiseRejectionWarning: TypeError: The 'compilation' argument must be an instance of Compilation
+```
 
-podés revisar de no tener prendido el sourceMap para debugging, en  el angular.json debería quedar así:
+podés revisar de no tener prendido el sourceMap para debugging, en el angular.json debería quedar así:
 
-    "sourceMap": false,
+```typescript
+ "sourceMap": false,
+```
 
 Más info [acá](https://github.com/storybookjs/storybook/discussions/17232)!
 
 Si aún vemos este maldito:
 
-    UnhandledPromiseRejectionWarning: TypeError: The 'compilation' argument must be an instance of Compilation
-
+```typescript
+ UnhandledPromiseRejectionWarning: TypeError: The 'compilation' argument must be an instance of Compilation
+```
 
 Vamos a tener que revisar y verificar las versiones de webpack de angular y webpack de storybook, para eso seguimos estos pasos:
 
-    1.  `npm ls webpack`
-    2.  Buscamos la version de webpack para `@angular-devkit/build-angular`
-    3.  `npm install`  la version exacta en dev dependencies
-    4.  `npm dedupe` // WTF? si, esto intenta simplificar el arbol de dependencias de los paquetes cambiando su estructura y también elimina duplicados
+1.  `npm ls webpack`
+2.  Buscamos la version de webpack para `@angular-devkit/build-angular`
+3.  `npm install` la version exacta en dev dependencies
+4.  `npm dedupe` // WTF? si, esto intenta simplificar el arbol de dependencias de los paquetes cambiando su estructura y también elimina duplicados
 
 Más info de este error y los pasos que vimos arriba [acá](https://github.com/storybookjs/storybook/issues/16977)!
 
 ## Jest
+
 ![enter image description here](https://i.ytimg.com/vi/2Y_symiajsc/maxresdefault.jpg)
 
 Si te animaste a decirle adiós a Jasmine y Karma, y empezaste a indagar en el mágico mundo de Jest, ahí van los ajustes necesarios para esta versión!
@@ -184,18 +213,20 @@ Si te animaste a decirle adiós a Jasmine y Karma, y empezaste a indagar en el m
 
 Para empezar, en mi experiencia migré todo jest a estas nuevas versiones:
 
-    "@types/jest": "27.4.1",
-    "jest": "^27.4.7",
-    "jest-preset-angular": "^11.0.1",
-    "ts-jest": "^27.1.2",
+```typescript
+ "@types/jest": "27.4.1",
+ "jest": "^27.4.7",
+ "jest-preset-angular": "^11.0.1",
+ "ts-jest": "^27.1.2",
+```
 
-Para migrar y actualizar nuestro jest.config.js por comando npm ejecutamos: 
+Para migrar y actualizar nuestro jest.config.js por comando npm ejecutamos:
 
-    npx ts-jest config:migrate jest.config.js
+npx ts-jest config:migrate jest.config.js
 
 Otras formas de ejecutarlo [acá](https://kulshekhar.github.io/ts-jest/docs/migration/):
 
-También, recomiendo seguir estos pasos para migrar los cambios según el [changelog](https://changelogs.md/github/thymikee/jest-preset-angular/) 
+También, recomiendo seguir estos pasos para migrar los cambios según el [changelog](https://changelogs.md/github/thymikee/jest-preset-angular/)
 
 En mi experiencia tuve este error:
 
@@ -203,66 +234,75 @@ En mi experiencia tuve este error:
 
 y este otro:
 
-    Zone is needed for the waitForAsync() test helper but could not be found. Please make sure that your environment includes zone.js
+```typescript
+ Zone is needed for the waitForAsync() test helper but could not be found. Please make sure that your environment includes zone.js
+```
 
 A ambos los resolví fixeando el **test.ts** (donde importamos el jest-preset-angular) así:
 
-```javascript
-import  'jest-preset-angular';
-import  'zone.js';
-import  'zone.js/testing';
+```typescript
+import "jest-preset-angular";
+import "zone.js";
+import "zone.js/testing";
 import { TestBed } from "@angular/core/testing";
-import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from "@angular/platform-browser-dynamic/testing";
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting,
+} from "@angular/platform-browser-dynamic/testing";
 
-TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+TestBed.initTestEnvironment(
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting()
+);
 ```
+
 Más info de ese error [acá](https://stackoverflow.com/questions/65397145/error-need-to-call-testbed-inittestenvironment-first)!
 
 Algunos cambios únicamente podrían afectarte según la versión de Jest y de jest-preset-angular que estés usando actualmente, por las dudas podés chequearlos [acá](https://thymikee.github.io/jest-preset-angular/docs/guides/angular-13+/).
 
 Si encontrás este otro error:
 
+```typescript
     [Package subpath './src/ngtsc/reflection' is not defined by "exports" in /node_modules/@angular/compiler-cli/package.json](https://stackoverflow.com/questions/70306517/package-subpath-src-ngtsc-reflection-is-not-defined-by-exports-in-node-mo)
+```
 
 Podrías revisar si las versiones de jest necesitan otro cambio como indican [acá](https://stackoverflow.com/questions/70306517/package-subpath-src-ngtsc-reflection-is-not-defined-by-exports-in-node-mo).
 
 Otro error que experimenté fue:
 
-```
+```typescript
 Cannot configure the test module when the test module has already been instantiated. Make sure you are not using `inject` before `R3TestBed.configureTestingModule`
 ```
 
 Para fixearlo, es necesario agregar la opción de teardown en el configureTestingModule:
 
-```
+```typescript
 teardown: { destroyAfterEach: false },
 ```
 
 Más info [acá](https://dev.to/this-is-angular/improving-angular-tests-by-enabling-angular-testing-module-teardown-38kh)!
 
-
 ## Ventajas y cambios en esta versión
+
 ![enter image description here](https://res.cloudinary.com/practicaldev/image/fetch/s--qTBd8CiH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3dtliaqu22w3ryjyomkb.jpg)
 Desde el [blog oficial](https://blog.angular.io/angular-v13-is-now-available-cce66f7bc296) tenemos toooda la data de los cambios que llegan con Angular 13, así que destaco y ultra resumo algunos puntos muy interesantes:
 
- - Ivy everywhere, se depreca View Engine.
- - Component API updates: para crear componentes dinámicos, se redujo el boilerplate y se depreca el component factory resolver que usábamos, logrando que sólo usemos el viewContainerRef y el createComponent para tal fin!
- - End of IE11 support: hermosa noticia aunque también podemos decir algo melancólica para algunos, unas últimas palabras: somos varios quienes todavía seguramente recordamos cuando dábamos soporte a los antiguos IE con esos condicionales y no se cuantos hacks en CSS para lograr que se visualice apenitas parecido a lo que queríamos, no era mucho pedir, pero les aseguro que era más difícil que un boss de Cuphead.
- ![enter image description here](https://i.pinimg.com/736x/8b/d7/5c/8bd75c41f1c446bb7139041bb31cc6f3.jpg)
- - Improvements to the Angular CLI: cache build por defecto!
- - RxJS: ahora en las nuevas apps con Angular 13, la versión 7.4 de RxJS va a instalarse por defecto, para la migra manualmente se debe instalar `npm install rxjs@7.4`
- - TypeScript 4.4: Cambios [acá](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/) y breaking changes [acá](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#breaking-changes)!
- - Mejoras en Angular tests: usando Jasmine, ahora mejoraron y se hace una limpieza del DOM en cada test, optimizándolos:
- 
-	`teardown: {  destroyAfterEach: true  }`
-   
+- Ivy everywhere, se depreca View Engine.
+- Component API updates: para crear componentes dinámicos, se redujo el boilerplate y se depreca el component factory resolver que usábamos, logrando que sólo usemos el viewContainerRef y el createComponent para tal fin!
+- End of IE11 support: hermosa noticia aunque también podemos decir algo melancólica para algunos, unas últimas palabras: somos varios quienes todavía seguramente recordamos cuando dábamos soporte a los antiguos IE con esos condicionales y no se cuantos hacks en CSS para lograr que se visualice apenitas parecido a lo que queríamos, no era mucho pedir, pero les aseguro que era más difícil que un boss de Cuphead.
+  ![enter image description here](https://i.pinimg.com/736x/8b/d7/5c/8bd75c41f1c446bb7139041bb31cc6f3.jpg)
+- Improvements to the Angular CLI: cache build por defecto!
+- RxJS: ahora en las nuevas apps con Angular 13, la versión 7.4 de RxJS va a instalarse por defecto, para la migra manualmente se debe instalar `npm install rxjs@7.4`
+- TypeScript 4.4: Cambios [acá](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/) y breaking changes [acá](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#breaking-changes)!
+- Mejoras en Angular tests: usando Jasmine, ahora mejoraron y se hace una limpieza del DOM en cada test, optimizándolos:
 
- - Temas de accesibilidad: si usas Angular Material, hay varias mejoras de accesibilidad! Todos los detalles [acá](https://blog.angular.io/improving-angular-components-accessibility-89b8ae904952)
- - Inline Fonts: Desde Angular 11 se le dio soporte inline a Google Fonts. En esta versión 13, extienden el soporte a Adobe Fonts.
- - Cambios y contribuciones de la comunidad: entre ellos cambios para activar/desactivar validators en dynamic forms, y la restauración del history del browser en el RouterModule mediante
+  `teardown: {  destroyAfterEach: true  }`
 
- `  {  canceledNavigationResolution: 'computed'  }`
- 
+- Temas de accesibilidad: si usas Angular Material, hay varias mejoras de accesibilidad! Todos los detalles [acá](https://blog.angular.io/improving-angular-components-accessibility-89b8ae904952)
+- Inline Fonts: Desde Angular 11 se le dio soporte inline a Google Fonts. En esta versión 13, extienden el soporte a Adobe Fonts.
+- Cambios y contribuciones de la comunidad: entre ellos cambios para activar/desactivar validators en dynamic forms, y la restauración del history del browser en el RouterModule mediante
+
+`  {  canceledNavigationResolution: 'computed'  }`
+
 Espero les haya servido, happy coding!!!
 ![enter image description here](https://images-na.ssl-images-amazon.com/images/I/517S+mNAxOL.jpg)
-  

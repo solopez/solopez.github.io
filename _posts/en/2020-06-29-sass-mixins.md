@@ -3,7 +3,7 @@ date: 2020-06-29 21:28:40
 layout: post
 title: Mixins
 description: Mixins and samples!
-image: '../assets/img/mixins.jpg'
+image: "../assets/img/mixins.jpg"
 category: SCSS
 language: en
 tags:
@@ -12,47 +12,49 @@ tags:
   - superpowers
   - humor
 author: sol lopez
-
 ---
 
 # Mixins
+
 ## Doing magic
 
-Hi friends! As promised, it's a debt here I'm bringing the post closer to share some #experiences and #tips for my dear powerful @***mixins*** that [SASS ](https://sass-lang.com/) gives us .. take ittt![enter image description here](data:image/jpeg;base64,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)
+Hi friends! As promised, it's a debt here I'm bringing the post closer to share some #experiences and #tips for my dear powerful @**_mixins_** that [SASS ](https://sass-lang.com/) gives us .. take ittt![enter image description here](data:image/jpeg;base64,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)
 
-*What is a mixin?* A mixin represents a block of code that allows us to group css statements that we know we are going to reuse throughout our project.
+_What is a mixin?_ A mixin represents a block of code that allows us to group css statements that we know we are going to reuse throughout our project.
 
-So to create our first mixin we could create inside the styles folder, a file called **_mixins.scss** and write a block for a certain element, for example a title:
+So to create our first mixin we could create inside the styles folder, a file called **\_mixins.scss** and write a block for a certain element, for example a title:
 
      @mixin title {
+
 font-size: 30px;
 line-height: 22px;
 color: $random-color-from-previous-post;
 font-weight: bold;
-     }
+}
 
 So every time we need to include a title in our template, we will add it to the class that contains it, the mixin, our **html** could be something like
 
      <h1 class="title">Title</h1>
 
 and we are going to ask it to render that title with our convention declared in our mixin in our **.scss**:
-    .title {
-	    @include title;
-    }
+.title {
+@include title;
+}
 
-With only that line we are already rendering the 4 css rules that we defined in our mixin. Whenever we have an element that we want to render with the characteristics of that title, we just write *@include title;* and the magic happens.
+With only that line we are already rendering the 4 css rules that we defined in our mixin. Whenever we have an element that we want to render with the characteristics of that title, we just write _@include title;_ and the magic happens.
 ![enter image description here](https://img.vixdata.io/pd/jpg-large/es/sites/default/files/s/smart-meme.jpg)
-    
+
 Now, we can go further and start scaling or flexing our mixin. Yes there is more magic!
 
 If, for example, we want to keep our title structure but we want small things to vary, without altering that structure, we could modify our mixin so that it is parameterizable, then:
 
     @mixin title($color: blue) {
+
 font-size: 30px;
 line-height: 22px;
 colour: $colour;
 font-weight: bold;
-    }
+}
 
 ![enter image description here](https://i.pinimg.com/originals/b1/c7/2f/b1c72f820b855a5aa0c65840eb07fe37.jpg)
 
@@ -65,44 +67,45 @@ Alllllta magic there... with that we just made our mixin ready with a default ti
 In turn, we can create another small plugin mixin:
 
     @mixin bottom-line($color: blue, $margin: 1rem, $padding: 1rem 0) {
-margin: $margin;
-        border-bottom: 3px solid $color;
-        padding: $padding;
-    }
 
+margin: $margin;
+border-bottom: 3px solid $color;
+padding: $padding;
+}
 
 That way if we have another title that we want to draw a line under the title, with our mixin already created, we just have to write:
 
     .title {
         @include title(red);
+
 @include bottom-line(red, 2rem, 1rem);
-    }
+}
 
 Note: If we don't pass it parameters, it would also work with the default values ​​`@include bottom-line();`
 
 ## Nesting
+
 Yessily! We can nest and include other mixins within our mixin if we wish, for example we create a link-style mixin:
 
-
     @mixin special-link($hover-color: white) {
+
 text-decoration: underline;
 cursor: pointer;
 &:hover {
 background-color: $hover-color;
 }
 }
-       
- We created it as a mixin because the idea is to use these link rules on any element, not just titles.
 
+We created it as a mixin because the idea is to use these link rules on any element, not just titles.
 
     @mixin title($color: blue, $hover-color) {
+
 @include special-link($hover-color);
 font-size: 30px;
 line-height: 22px;
 colour: $colour;
 font-weight: bold;
-    }
-
+}
 
 So now, every time we use our mixin title it will always have the link characteristics included, and not only that, but we can also define the hover color if we want a different one than the one we choose by default (the one that is almost always applied is the one we are going to choose by default):
 
@@ -115,6 +118,7 @@ With that we are going to render our title with link and hover in black.
 As we define the rules of our project, we can see how convenient it is for us to parameterize and make our mixins more flexible, and how convenient it is for us to attach options within them. For example nesting has no limits, if we want to follow the first example, instead of including 2 mixins we could add the mixin bottom-line and special-link inside the main mixin title:
 
     @mixin title($color: blue, $hover-color, $size: 30px) {
+
 @include special-link($hover-color);
 @include bottom-line(red, 2rem, 1rem);
 font-size: $size...
@@ -131,6 +135,7 @@ In fact, if we start to notice that we almost always include the same mixins to 
 Let's see how it would be!!!
 
      @mixin title($color: blue, $hover-color, $size: 30px, $include-specials: true) {
+
 @if ($include-specials) {
 @include special-link($hover-color);
 @include bottom-line(red);
@@ -145,44 +150,45 @@ Now in our classes we have to choose when we want the special mixins for link an
         @include title(red, black, 30px, false);
     }
 
-
 ![enter image description here](https://www.mememaker.net/api/bucket?path=static/img/memes/full/2017/Feb/4/0/beleza-boa-noite.jpg)
 
 ## @content
-Just as in [ANGULAR](https://angular.io) we have ***content projection*** or ***transclusion*** with **ng-content**, here we have something similar! with *@content* what we do is allow to project other blocks of code in a css block for example, let's see:
+
+Just as in [ANGULAR](https://angular.io) we have **_content projection_** or **_transclusion_** with **ng-content**, here we have something similar! with _@content_ what we do is allow to project other blocks of code in a css block for example, let's see:
 
     @mixin small($width: 320px) {
         @media only screen and (min-width: $width) {
             @content;
         }
     }
-    
+
     @mixin tablet($width: 768px) {
         @media only screen and (min-width: $width) {
             @content;
         }
     }
-    
+
     @mixin desktop($width: 992px) {
         @media only screen and (min-width: $width) {
             @content;
         }
     }
-       
+
+
 And we call it:
-    @include small(345px) {
-	    font-size: 20px;
-	    ...
-    }
+@include small(345px) {
+font-size: 20px;
+...
+}
 
     @include tablet() {
-	    bla bla
-	    ...
+        bla bla
+        ...
     }
 
     @include desktop(360px) {
-	    ble ble
-	    ...
+        ble ble
+        ...
     }
 
 By having our **@content** in a mixin, we can save ourselves the media queries that after a long time can be very tedious, having to write them in each css, or in each class is a bit much hahahaha this way we only write include small..or whatever we put on it, that's your favorite dev's choice :D
@@ -204,15 +210,15 @@ I was able to render all 4 marks with something like:
 And voila, I really saved all the css of the marks themselves, and only passed the position as dynamic. Throw a mixin daaaale
 
 ## Conclution
+
 As we can see, the mixins are totally scalable and flexible to any element, we can calmly render and draw structures that we know we have been repeating or we noticed in the project we are working on that they begin to repeat a lot throughout the styles in general, that is when we We realize that it is better to apply **@mixins**.
 
-The idea is always to handle not so powerful mixins or *bazooka* from the start, we don't want to kill a fly with a rifle either, do we? or not? or if? Let's not be too fanatical about the arguments either because after the mixin we have anything left and we have to pass 10 arguments to it to do something mmmmmm no, NOT LIKE THAT. The idea is to pass only 2 or 3 parameters as far as possible, if we see that we need to expand, it is better to create another mixin, simple, pure, that we can even reuse elsewhere.
+The idea is always to handle not so powerful mixins or _bazooka_ from the start, we don't want to kill a fly with a rifle either, do we? or not? or if? Let's not be too fanatical about the arguments either because after the mixin we have anything left and we have to pass 10 arguments to it to do something mmmmmm no, NOT LIKE THAT. The idea is to pass only 2 or 3 parameters as far as possible, if we see that we need to expand, it is better to create another mixin, simple, pure, that we can even reuse elsewhere.
 
 Let's see whenever we can what is really used and useful, let's remember the principle [YAGNI](https://es.wikipedia.org/wiki/YAGNI)
 
 As a gift for reading you earned the fly with the rifle
 
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJHUZWR7dLPtLqkNYbTFVN4rysc-0bdwdpRw&usqp=CAU)
-
 
 By Sol López, frontend, rosarina, drummer, rock & metal.
