@@ -3,7 +3,7 @@ date: 2020-06-18 12:26:40
 layout: post
 title: Unit testing con Jasmine!
 description: Reactive forms
-image: '../assets/img/tests2.png'
+image: "../assets/img/tests2.png"
 category: test
 language: es
 tags:
@@ -11,16 +11,19 @@ tags:
   - reactiveforms
   - humor
 author: sol lopez
-
 ---
-# Unit testing con Jasmine! 
+
+# Unit testing con Jasmine!
+
 ## Metele tests!
 
 Hola! Siguiendo con unit testing.. alguna vez les pasó que los tests que contienen un reactive form no instancian correctamente los controles? Bueno, ya les va a pasar :O
 
 A veces nos vamos a encontrar con esta maravilla:
 
+```typescript
     formGroup expects a FormGroup instance, please pass one in bla bla bla
+```
 
 Bueno, muchas veces no vas a ver este error si mockeaste todo joya de una, pero sino... holis
 
@@ -33,16 +36,19 @@ Para empezar, repasemos lo básico que debemos contemplar a la hora de construir
 
 En los imports, aseguarnos que contamos con los siguientes:
 
-    imports: [ 
-	    ReactiveFormsModule,
-	    FormsModule
-
+```typescript
+    imports: [
+        ReactiveFormsModule,
+        FormsModule
+```
 
 Y si tenemos controles custom, agregar esos modulos tambien, por ej
 
+```typescript
     imports: [
-	    SelectModule
-	    InputModule
+        SelectModule
+        InputModule
+```
 
 Segundo, mockeemos los valores de las variables/arrays o de donde sea que esos controles consuman para poder inicializarse. Si no necesitamos inicializar, podemos dejarlos empty o nulos, pero siempre mockeando el null desde nuestro .spec.
 
@@ -50,7 +56,9 @@ Por ejemplo, en el caso de un select, tomará los items de un array, podemos moc
 
 Finalmente, necesitamos llamar a nuestro querido
 
+```typescript
     fixture.detectChanges();
+```
 
 Esto es necesario para que nuestros tests corran el ciclo de init de angular y el init del template, donde tenemos nuestro form.
 
@@ -60,22 +68,28 @@ Siii tenemos un BONUS!
 
 Si queremos no solo mockear los valores para instanciar nuestro form, sino tambien armar nuestro form builder a gusto en el .spec, es posible:
 
+```typescript
     let fixture: ComponentFixture<ChildComponent>;
-     
+
     const formBuilder: FormBuilder = new FormBuilder();
+```
 
 y luego:
 
+```typescript
     providers: [{ provide: FormBuilder, useValue: formBuilder }]
+```
 
 y en el beforeEach:
 
+```typescript
     component.form = formBuilder.group({
-	    firstName: null,
-	    lastName: null
-	});
-    
+        firstName: null,
+        lastName: null
+    });
+
     fixture.detectChanges();
+```
 
 ![enter image description here](https://i.pinimg.com/originals/39/46/07/394607fdeea1f286afe8a4a0a28ec9fe.png)
 

@@ -40,8 +40,6 @@ url: "" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
 language: "es"
 lang: "es"
-categories_folder: category
-sent_message_url: "/contact/message-sent/"
 
 
 # Build settings
@@ -113,6 +111,12 @@ defaults:
     permalink: 'es'
     language: es
 - scope:
+    path: '_posts/es'
+    type: 'posts'
+  values:
+    permalink: 'es/:title'
+    language: es
+- scope:
     path: '_posts/en'
     type: 'posts'
   values:
@@ -124,11 +128,4 @@ defaults:
   values:
     permalink: 'en/:title'
     language: en
-- scope:
-    path: '_posts/es'
-    type: 'posts'
-  values:
-    permalink: 'es/:title'
-    language: es
-
 

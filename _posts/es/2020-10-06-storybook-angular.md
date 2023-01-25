@@ -3,7 +3,7 @@ date: 2020-10-06 17:30:40
 layout: post
 title: Storybook
 description: UI DevTool!
-image: '../assets/img/storybook.png'
+image: "../assets/img/storybook.png"
 category: CODE
 language: es
 tags:
@@ -57,10 +57,9 @@ Ahora que tenemos todo listo, lo único que tenemos que hacer, es crear las stor
 Las stories no son más que archivos nombrados como nuestrocomponente.stories.ts, donde vamos a exportar por un lado, la configuración y dependencias que necesitamos para instanciar nuestro componente, y por el otro, las constantes que deseemos haciendo uso de nuestro componente en diferentes situaciones, parámetros y contextos.
 
 Esto va a ser más facil verlo con un ejemplo, aca va una plantilla bien simple para nuestra primer story:
-
+```typescript
     import  {  moduleMetadata  }  from  '@storybook/angular';
     import  {  MyComponent  }  from  './my-component.component';
-
 
     export  default  {
       title:  'MyComponent',
@@ -75,7 +74,7 @@ Esto va a ser más facil verlo con un ejemplo, aca va una plantilla bien simple 
       template:  `
         <my-component></my-component>
     `});
-
+```
 Guardamos, y automáticamente Storybook va a refrescar nuestro navegador para reflejar los cambios.
 
 Más adelante podemos hacer crecer la story de nuestro componente, agregando nuevas constantes para ver cómo se comporta nuestro componente ante ciertos parámetros y eventos.

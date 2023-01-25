@@ -4,7 +4,7 @@ layout: post
 title: Angular 13!
 description: Angular 13 migration
 language: en
-image: '../assets/img/angular13.png'
+image: "../assets/img/angular13.png"
 category: CODE
 tags:
   - coding
@@ -22,7 +22,8 @@ Today's post is dedicated to the experiences during a specific migration from ou
 ![enter image description here](https://media.makeameme.org/created/Needs-to-upgrade.jpg)
 
 ## Guide
- To begin with, let's go to the official guide [here](https://update.angular.io/?l=3&v=12.0-13.0). In this case, coming from version 12, we do not need to apply changes to our code BEFORE executing the command in order to migrate. Therefore, we can start:
+
+To begin with, let's go to the official guide [here](https://update.angular.io/?l=3&v=12.0-13.0). In this case, coming from version 12, we do not need to apply changes to our code BEFORE executing the command in order to migrate. Therefore, we can start:
 
     ng update @angular/core@13 @angular/cli@13
 
@@ -30,41 +31,43 @@ Note: add the --force if necessary! So far in every migra it seems to cry out fo
 
 ![enter image description here](https://media.makeameme.org/created/the-force-is-3cdf009ad5.jpg)
 
-Most of the required changes we apply with the command. 
+Most of the required changes we apply with the command.
 The rest of the possible changes you have to make, will depend as always on the project you are working on and this guide is for those manual changes, here we go!
 You will also see differences as to whether you are working on an app, or a publishable library by the type of compilation, which we will see later.
 
 ### ModuleWithProviders migration
+
 If you have modules with providers implementing ModuleWithProviders, the schematic may not be able to determine the type, so it is necessary to migrate those that require the type like this:
 
     @NgModule({…})
     export class MyModule {
       static forRoot(config: SomeConfig): ModuleWithProviders<SomeModule> {
-	    return {
-	      ngModule: SomeModule,
-	      providers: [
-	        {provide: SomeConfig, useValue: config }
-	      ]
-	    };
+        return {
+          ngModule: SomeModule,
+          providers: [
+            {provide: SomeConfig, useValue: config }
+          ]
+        };
       }
     }
 
 More info [here](https://angular.io/guide/migration-module-with-providers)!
 
 ### Rxjs
+
 ![enter image description here](https://miro.medium.com/max/1400/1*ZUENlsi796hIv9TNeqJ3bA.png)
-If you were using RxJS v6.x, you must manually install 7.4: 
+If you were using RxJS v6.x, you must manually install 7.4:
 
     npm install rxjs@7.4
 
-For fresh projects and apps in this version of Angular, they will install rxjs 7.4 by default. 
+For fresh projects and apps in this version of Angular, they will install rxjs 7.4 by default.
 What's new in Rxjs [here](https://rxjs.dev/6-to-7-change-summary)!
 
-Of course this does not end here, there are some breaking changes and some deprecations that can impact your project, usually resolved in a short time. 
+Of course this does not end here, there are some breaking changes and some deprecations that can impact your project, usually resolved in a short time.
 Example :
 
     RxJS 7 allow to call 'next' without parameters (Typescript checks).
-    
+
 If you are doing a next in a Subject without params like this:
 
     const updateSubject = new Subject();
@@ -78,7 +81,8 @@ More info [here](https://github.com/ReactiveX/rxjs/issues/6324)!
 
 ### Compilermode
 
-### Angular library 
+### Angular library
+
 ![enter image description here](https://miro.medium.com/max/1000/1*rCgtilQLYXaua4FH4vxROg.png)
 If you are working on an npm publishable library, you may encounter this error:
 
@@ -96,18 +100,19 @@ More info [here](https://stackoverflow.com/questions/60121962/this-class-is-visi
 Angular libraries official docs [here](https://angular.io/guide/creating-libraries)!
 
 #### Error para Angular library: NG3003: Import cycles would need to be created to compile this component
+
 Also known as:
 
     One or more import cycles would need to be created to compile this component, which is not supported by the current compiler configuration.
     is used in the template but importing it would create a cycle
 
-If you ran into this cyclic error, it only occurs in **angular library**, if you are not working in a publishable library, you are safe and you earned the direct pass to the next section, get out of here! 
-This error could mean a change of low/medium complexity depending on the case, since we must take into account if it is a matter of imports with circular dependencies (low complexity) or if we need to apply refactor (medium complexity not so cheap). 
-For example in a case where in certain situations, component A embeds component B, and where component B may embed component A. 
+If you ran into this cyclic error, it only occurs in **angular library**, if you are not working in a publishable library, you are safe and you earned the direct pass to the next section, get out of here!
+This error could mean a change of low/medium complexity depending on the case, since we must take into account if it is a matter of imports with circular dependencies (low complexity) or if we need to apply refactor (medium complexity not so cheap).
+For example in a case where in certain situations, component A embeds component B, and where component B may embed component A.
 Most likely we will have to refactor if we have the latter case.
 The explanation of the error and possible suggestions to fix it from official Angular [here](https://angular.io/errors/NG3003)!
 
-This occurs because of the type of compilation, being either "partial" or "full" in our   
+This occurs because of the type of compilation, being either "partial" or "full" in our  
 **tsconfig.lib.prod.json.**
 
 Being in a library, we must use "partial" because we need the backward compatibility of consumers with or without Ivy.
@@ -117,7 +122,7 @@ Now, what if we are working on an Angular library, and we manually modify to "fu
 ![enter image description here](https://i.imgflip.com/6mp8ce.jpg)
 
     ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.
-    Please delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.	
+    Please delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.
 
 The build will tell you yes yes yes and when you run the `npm publish` it will welcome you with that error above... so no, don't even try, compile in `partial` and don't waste valuable time on this.
 
@@ -126,17 +131,19 @@ The build will tell you yes yes yes and when you run the `npm publish` it will w
 Unless you want to super investigate these types of compilation and why, I leave you with this one. [artículo](https://blog.lacolaco.net/2021/02/angular-ivy-library-compilation-design-in-depth-en/) which is very good, with graphics and everything is clear.
 
 ### Errors/Warnings
-In general and in each new version of Angular, errors and/or warnings are becoming more restrictive in several points but they are also becoming more descriptive, so they could be solved from the same suggestions that they offer us. That is why, I preferred to focus this post to the errors that are not so easy to solve and also to those that take us more time of analysis and investigation for its resolution. 
+
+In general and in each new version of Angular, errors and/or warnings are becoming more restrictive in several points but they are also becoming more descriptive, so they could be solved from the same suggestions that they offer us. That is why, I preferred to focus this post to the errors that are not so easy to solve and also to those that take us more time of analysis and investigation for its resolution.
 Remember to always run and compile the production build to exterminate the remaining bugs.
 
 ## Storybook
+
 ![enter image description here](https://pbs.twimg.com/tweet_video_thumb/FFiP-v7WYAQW2cP.jpg)
 
 If you are using Storybook in your project, there is a great migra also with several manual settings to keep Storybook up to date. The most important thing in this version: We have Angular compiler for storybook, so from our angular.json we are going to leave it configured.
 As always I suggest the official Storybook migration guide:
 
- - From 6.3.x to 6.4.x [here](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-63x-to-640)
- - Angular builder and changes for angular 13 [here](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#sb-angular-builder)
+- From 6.3.x to 6.4.x [here](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#from-version-63x-to-640)
+- Angular builder and changes for angular 13 [here](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#sb-angular-builder)
 
 Another issue that happened to me, was one of the problems in storybook compilation, of this style:
 
@@ -149,7 +156,7 @@ And if you see this: `can only be default-imported using the'allowSyntheticDefau
 You can solve it by adding that flag in the tsconfig of the root project (not storybook like the previous one):
 
     "allowSyntheticDefaultImports": true,
-	
+
 If the compilation problems persist and we see this:
 
         ```
@@ -158,7 +165,6 @@ If the compilation problems persist and we see this:
 
 you can check that you don't have the sourceMap on for debugging, in the angular.json it should look like this:
 
-
     "sourceMap": false,
 
 More info [here](https://github.com/storybookjs/storybook/discussions/17232)!
@@ -166,6 +172,7 @@ More info [here](https://github.com/storybookjs/storybook/discussions/17232)!
 If we still see this evil:
 
     UnhandledPromiseRejectionWarning: TypeError: The 'compilation' argument must be an instance of Compilation
+
 Vamos a tener que revisar y verificar las versiones de webpack de angular y webpack de storybook, para eso seguimos estos pasos:
 
     1.  `npm ls webpack`
@@ -176,6 +183,7 @@ Vamos a tener que revisar y verificar las versiones de webpack de angular y webp
 More info [here](https://github.com/storybookjs/storybook/issues/16977)!
 
 ## Jest
+
 ![enter image description here](https://i.ytimg.com/vi/2Y_symiajsc/maxresdefault.jpg)
 
 If you've decided to say goodbye to Jasmine and Karma, and started to delve into the magical world of Jest, here are the necessary adjustments for this version!
@@ -189,14 +197,13 @@ To begin with, in my experience I migrated all of Jest to these new versions:
     "jest-preset-angular": "^11.0.1",
     "ts-jest": "^27.1.2",
 
-To migrate and update our jest.config.js by npm command we execute: 
+To migrate and update our jest.config.js by npm command we execute:
 
     npx ts-jest config:migrate jest.config.js
 
 Other ways [here](https://kulshekhar.github.io/ts-jest/docs/migration/):
 
-Also, you may need to follow these steps to migrate according to the [changelog](https://changelogs.md/github/thymikee/jest-preset-angular/) 
-
+Also, you may need to follow these steps to migrate according to the [changelog](https://changelogs.md/github/thymikee/jest-preset-angular/)
 
 I've seen this one:
 
@@ -209,14 +216,21 @@ and this other one too:
 Both fixed at **test.ts** like this:
 
 ```javascript
-import  'jest-preset-angular';
-import  'zone.js';
-import  'zone.js/testing';
+import "jest-preset-angular";
+import "zone.js";
+import "zone.js/testing";
 import { TestBed } from "@angular/core/testing";
-import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from "@angular/platform-browser-dynamic/testing";
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting,
+} from "@angular/platform-browser-dynamic/testing";
 
-TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+TestBed.initTestEnvironment(
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting()
+);
 ```
+
 More info [here](https://stackoverflow.com/questions/65397145/error-need-to-call-testbed-inittestenvironment-first)!
 
 Some changes may only affect you depending on the version of Jest and jest-preset-angular you are currently using, just in case you check them out [here](https://thymikee.github.io/jest-preset-angular/docs/guides/angular-13+/).
@@ -241,29 +255,27 @@ teardown: { destroyAfterEach: false },
 
 More info [here](https://dev.to/this-is-angular/improving-angular-tests-by-enabling-angular-testing-module-teardown-38kh)!
 
-
 ## Advantages and changes in this version
+
 ![enter image description here](https://res.cloudinary.com/practicaldev/image/fetch/s--qTBd8CiH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3dtliaqu22w3ryjyomkb.jpg)
 From [Official Blog](https://blog.angular.io/angular-v13-is-now-available-cce66f7bc296) we have all the data of the changes coming with Angular 13, so I highlight and summarize some very interesting points:
 
- - Ivy everywhere, View Engine is deprecated.
- - Component API updates: to create dynamic components, the boilerplate was reduced and the component factory resolver we used was deprecated, so we can only use the viewContainerRef and the createComponent for this purpose!
- - End of IE11 support: beautiful news although we can also say something melancholic for some, a few last words: there are many of us who still surely remember when we supported the old IE with those conditionals and I don't know how many hacks in CSS to make it look just like what we wanted, it was not much to ask, but I assure you that it was harder than a Cuphead boss.
+- Ivy everywhere, View Engine is deprecated.
+- Component API updates: to create dynamic components, the boilerplate was reduced and the component factory resolver we used was deprecated, so we can only use the viewContainerRef and the createComponent for this purpose!
+- End of IE11 support: beautiful news although we can also say something melancholic for some, a few last words: there are many of us who still surely remember when we supported the old IE with those conditionals and I don't know how many hacks in CSS to make it look just like what we wanted, it was not much to ask, but I assure you that it was harder than a Cuphead boss.
 
- ![enter image description here](https://i.pinimg.com/736x/8b/d7/5c/8bd75c41f1c446bb7139041bb31cc6f3.jpg)
+![enter image description here](https://i.pinimg.com/736x/8b/d7/5c/8bd75c41f1c446bb7139041bb31cc6f3.jpg)
 
- - Improvements to the Angular CLI: cache build by default!
- - RxJS: now in new apps with Angular 13, RxJS version 7.4 will be installed by default, for manual migration you must install `npm install rxjs@7.4`.
- - TypeScript 4.4: Changes [here](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/) and breaking changes [here](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#breaking-changes)!
- - Improvements in Angular tests: using Jasmine, now improved and a DOM cleanup is done in each test, optimizing them:
- 
-	`teardown: {  destroyAfterEach: true  }`
-   
+- Improvements to the Angular CLI: cache build by default!
+- RxJS: now in new apps with Angular 13, RxJS version 7.4 will be installed by default, for manual migration you must install `npm install rxjs@7.4`.
+- TypeScript 4.4: Changes [here](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/) and breaking changes [here](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#breaking-changes)!
+- Improvements in Angular tests: using Jasmine, now improved and a DOM cleanup is done in each test, optimizing them:
 
- - Accessibility issues: if you use Angular Material, there are several accessibility improvements! All the details [here](https://blog.angular.io/improving-angular-components-accessibility-89b8ae904952)
- - Inline Fonts: Since Angular 11 they gave inline support to Google Fonts. In this version 13, they extend the support to Adobe Fonts.
- - Changes and contributions from the community: among them changes to enable/disable validators in dynamic forms, and the restoration of the browser history in the RouterModule by ` { canceledNavigationResolution: 'computed' },`.
- 
+  `teardown: {  destroyAfterEach: true  }`
+
+- Accessibility issues: if you use Angular Material, there are several accessibility improvements! All the details [here](https://blog.angular.io/improving-angular-components-accessibility-89b8ae904952)
+- Inline Fonts: Since Angular 11 they gave inline support to Google Fonts. In this version 13, they extend the support to Adobe Fonts.
+- Changes and contributions from the community: among them changes to enable/disable validators in dynamic forms, and the restoration of the browser history in the RouterModule by ` { canceledNavigationResolution: 'computed' },`.
+
 Happy coding!!!
 ![enter image description here](https://images-na.ssl-images-amazon.com/images/I/517S+mNAxOL.jpg)
-  

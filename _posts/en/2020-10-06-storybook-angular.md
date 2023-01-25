@@ -3,7 +3,7 @@ date: 2020-10-06 17:30:40
 layout: post
 title: Storybook
 description: UI DevTool!
-image: '../assets/img/storybook.png'
+image: "../assets/img/storybook.png"
 category: CODE
 language: en
 tags:

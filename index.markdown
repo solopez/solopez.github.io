@@ -1,17 +1,20 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
+layout: home
+permalink: en
 layout: home
 permalink: es
 
-layout: home
-permalink: en
 
 
 title: home
 redirect_from:
   - /
+
+
+
+
 ---
 
 
