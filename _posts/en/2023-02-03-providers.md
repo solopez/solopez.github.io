@@ -20,7 +20,7 @@ Happy Friday! Today's post is dedicated to dependency injection in Angular and h
 
 Let's assume the following service:
 
-````typescript
+```typescript
 import { Injectable } from "@angular/core";
 
 @Injectable({
@@ -35,7 +35,7 @@ When we use the `providedIn: 'root'` , it means that we will be able to inject t
 
 We can also inject a service at the module level like this:
 
-````typescript
+```typescript
 import { Injectable } from "@angular/core";
 import { UserModule } from "./user.module";
 
@@ -47,7 +47,7 @@ export class UserService {}
 
 Or also like this
 
-````typescript
+```typescript
 import { NgModule } from "@angular/core";
 
 import { UserService } from "./user.service";
@@ -73,7 +73,7 @@ But this works differently for the lazy case. When Angular loads a lazy module, 
 
 Let's imagine a tree of injectors. We have the root injector and then the child injectors for **each** lazy module. These child injectors will be in charge of preparing and making available the providers of their corresponding lazy module. And each component of that lazy module, will have its own local instance of the child services indicated in the providers of it.
 
-Note_: This could be heavy if we talk about injector hierarchies, but we will leave it for another post.
+Note\_: This could be heavy if we talk about injector hierarchies, but we will leave it for another post.
 
 Therefore we highlight on the one hand, the single and shared instance ([singleton](https://angular.io/guide/singleton-services)) of a service (for eagerly modules), and on the other hand, that each lazy module has its own instance of the service as we see here:
 
@@ -87,7 +87,7 @@ Component providers and _NgModule_ providers are independent of each other.
 This method to inject in the component, serves more than anything when we want in a module (eagerly, not lazy) to inject a service only for itself.
 That is to say, injecting a service in the component limits the service only to that component and its descendants.
 
-````typescript
+```typescript
     @Component({
       /* . . . */
       providers: [UserService]
