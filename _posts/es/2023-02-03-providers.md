@@ -14,7 +14,7 @@ tags:
 author: sol lopez
 ---
 
-Buenas! Feliz viernes! El post de hoy va dedicado a la inyección de dependencias en Angular y cómo podemos proveer estas dependencias en módulos y componentes. Como siempre la docu oficial por [acá](https://angular.io/guide/providers)
+Buenas! Felíz viernes! El post de hoy va dedicado a la inyección de dependencias en Angular y cómo podemos proveer estas dependencias en módulos y componentes. Como siempre la docu oficial por [acá](https://angular.io/guide/providers)
 
 ## Inyectando un servicio en root
 
