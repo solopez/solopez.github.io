@@ -171,4 +171,4 @@ The famous value accessorrrr, full of examples everywhere and many methods to im
 
 I hope this is useful and happy codinggggggg!!!!
 
-By Sol López, frontend, rosarina, drummer, rock & metal.
+

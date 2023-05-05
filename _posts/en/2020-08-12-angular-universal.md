@@ -230,4 +230,4 @@ During this migration of compatibility between Universal and Ivy, I did not find
 
 [Blog Universal y Angular 9](https://medium.com/@mugan86/server-side-rendering-con-angular-universal-9-9fdf33d03f4d)
 
-By Sol López, frontend, rosarina, drummer, rock & metal.
+

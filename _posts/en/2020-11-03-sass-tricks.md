@@ -184,4 +184,3 @@ and the list goes on... (up to 10 in this case). But the idea is to be able to g
 
 Happy cooooooding!
 
-By Sol López, frontend, drummer, let's rock & metal.

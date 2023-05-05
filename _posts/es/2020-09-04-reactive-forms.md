@@ -171,4 +171,4 @@ El famoso value accesorrrrr, lleno de ejemplos en todos lados y muchos metodos p
 
 Espero esto les sirva y happy codinggggg!!!
 
-By Sol López, frontend, rosarina, baterista, rock & metal.
+

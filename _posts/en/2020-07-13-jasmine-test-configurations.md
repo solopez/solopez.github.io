@@ -138,4 +138,4 @@ In the next post I will detail different spies and other ways of stubbing, not t
 
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhRiu_UYgsZsWfYz664zeusnx16xlnyEp6qw&usqp=CAU)
 
-By Sol López, frontend, rosarina, drummer, rock & metal.
+

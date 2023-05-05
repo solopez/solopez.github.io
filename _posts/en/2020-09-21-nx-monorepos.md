@@ -79,4 +79,4 @@ What are you waiting for to give it a try? If these advantages didn't convince y
 
 Hope it helps and happy codinggggggg!!!!
 
-By Sol López, frontend, rosarina, drummer, rock & metal.
+

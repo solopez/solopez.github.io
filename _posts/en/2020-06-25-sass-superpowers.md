@@ -87,4 +87,4 @@ The code is much more readable this way, as we get used to it, even if we change
 
 ![enter image description here](https://i.pinimg.com/736x/7b/60/48/7b6048ece338d9c183e5edc4720d4041.jpg)
 
-By Sol López, frontend, rosarina, drummer, rock & metal.
+

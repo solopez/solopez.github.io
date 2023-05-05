@@ -91,4 +91,4 @@ El código es mucho más legible de esta manera, a medida que nos vamos acostumb
 
 ![enter image description here](https://i.pinimg.com/736x/7b/60/48/7b6048ece338d9c183e5edc4720d4041.jpg)
 
-By Sol López, frontend, rosarina, baterista, rock & metal.
+

@@ -101,4 +101,4 @@ Viendo todas estas ventajas los invito a darle una chance.
 
 Happy cooooooding!!
 
-By Sol López, frontend, rosarina, baterista, rock & metal.
+

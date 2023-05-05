@@ -221,4 +221,4 @@ As a gift for reading you earned the fly with the rifle
 
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJHUZWR7dLPtLqkNYbTFVN4rysc-0bdwdpRw&usqp=CAU)
 
-By Sol López, frontend, rosarina, drummer, rock & metal.
+
