@@ -42,7 +42,7 @@ function addTodoNumber(item: number): void {
 
 In the example, we can see that we have 2 methods ALMOST the same, the only thing that makes them different is that the parameter that we pass is string in the first one and number in the second one.
 And not only that, but having those 2 methods, we are going against the **DRY: Don't-Repeat-Yourself** principle, according to which "all knowledge or logic must have a unique and unequivocal representation within a system".
-![DRY Principle - Programming - Sticker | TeePublic](https://res.cloudinary.com/teepublic/image/private/s--w3Kox9HB--/c_crop,x_10,y_10/c_fit,w_1109/c_crop,g_north_west,h_709,w_1260,x_-76,y_-69/co_rgb:000000,e_colorize,u_Misc:One%20Pixel%20Gray/c_scale,g_north_west,h_709,w_1260/fl_layer_apply,g_north_west,x_-76,y_-69/bo_0px_solid_white/t_Resized%20Artwork/c_fit,g_north_west,h_1054,w_1054/co_ffffff,e_outline:53/co_ffffff,e_outline:inner_fill:53/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1559692427/production/designs/4993681_0.jpg)
+![DRY Principle](https://solopez.github.io/assets/img/dry.jpg)
 
 So, how can we do, to unify and adapt both methods so that you can have the power to manipulate both types?
 
