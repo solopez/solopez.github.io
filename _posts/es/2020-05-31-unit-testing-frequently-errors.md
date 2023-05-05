@@ -66,4 +66,4 @@ Evitemos el [NO_ERRORS_SCHEMA], este sólo sirve para ocultar errores e indica q
 
 Por lo general cuando hacemos ng test --watch ya podemos correr con Karma por ej los tests y ver los errores. Si no es suficiente, es posible abrir los tests desde localhost:9876 por lo general y encender el modo debug. Muchas veces consologueando tambien nos damos cuenta rapidamente si el problema es meramente del componente o de un metodo que no esta siendo mockeado del todo o si ni siquiera accede al mismo etc.
 
-By Sol López, frontend, rosarina, baterista, rock & metal.
+

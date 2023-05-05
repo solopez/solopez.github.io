@@ -79,4 +79,4 @@ Qué estás esperando para darle una chance? Si estas ventajas no te convenciero
 
 Espero les sirva y happy codinggggg!!!
 
-By Sol López, frontend, rosarina, baterista, rock & metal.
+

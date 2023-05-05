@@ -102,4 +102,4 @@ Seeing all these advantages I invite you to give it a try.
 
 Happy cooooooding!
 
-By Sol López, frontend, rosarina, drummer, rock & metal.
+

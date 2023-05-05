@@ -184,4 +184,4 @@ y la lista sigue.. (hasta llegar a 10 en este caso). Pero la idea es poder gener
 
 Happy cooooooding!!
 
-By Sol López, frontend, rosarina, baterista, rock & metal.
+

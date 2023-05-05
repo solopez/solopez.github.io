@@ -218,4 +218,4 @@ De regalo por leer te ganaste la mosca con el rifle
 
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJHUZWR7dLPtLqkNYbTFVN4rysc-0bdwdpRw&usqp=CAU)
 
-By Sol López, frontend, rosarina, baterista, rock & metal.
+

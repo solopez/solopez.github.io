@@ -139,4 +139,4 @@ En el próximo post voy a detallar distintos spies y otras formas de stubbear, p
 
 ![enter image description here](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhRiu_UYgsZsWfYz664zeusnx16xlnyEp6qw&usqp=CAU)
 
-By Sol López, frontend, rosarina, baterista, rock & metal.
+

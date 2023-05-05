@@ -89,4 +89,4 @@ fixture.detectChanges();
 
 ![enter image description here](https://i.pinimg.com/originals/39/46/07/394607fdeea1f286afe8a4a0a28ec9fe.png)
 
-By Sol López, frontend, rosarina, drummer, rock & metal.
+
