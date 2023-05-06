@@ -68,7 +68,7 @@ function addTodo<Type>(item: Type): void {
 }
 ```
 
-Analicemos un poco la solución que aplicamos con TS Generic. El `<Type>`, es simplemente un placeholder que va a ser reemplazado por el tipo cuando ejecutemos la función, asegurando haciendo la misma type-safe.
+Analicemos un poco la solución que aplicamos con TS Generic. El `<Type>`, es simplemente un placeholder que va a ser reemplazado por el tipo cuando ejecutemos la función, haciendo la misma type-safe.
 Por ejemplo: `addTodo<string>('Sama');`
 Declarando el string, evitamos que se pueda pasar un param que no sea string.
 
@@ -88,7 +88,7 @@ function addTodo<T, S>(item: T, status: S): void {
 }
 ```
 
-Podemos pasar múltiples parámetros como placeholders `<T,S>`en la definición de nuestra Generic function, para luego especificarlos cuando invocamos:
+Podemos pasar múltiples parámetros incluso como placeholders `<T,S>` en la definición de nuestra Generic function, para luego especificarlos cuando invocamos:
 
 ```typescript
 addTodo<string, boolean>("Learn TypeScript", true);
@@ -144,7 +144,7 @@ function addTodo<Type extends string | number>(item: Type): void {
 }
 ```
 
-De esta forma estamos aplicando controlando y restringiendo los tipos para acotar y evitar posibles errores (por tipos no soportados) dentro de nuestras implementaciones.
+De esta forma estamos controlando y restringiendo los tipos y evitando posibles errores (por tipos no soportados) dentro de nuestras implementaciones.
 
 ## Conclusión
 
