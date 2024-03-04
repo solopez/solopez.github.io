@@ -19,7 +19,7 @@ How are you doing? First post of 2024 and we are back with magic about Micro Fro
 
 Today's post is dedicated to experiences and some first contact examples to start implementing Micro Frontends in our projects with this architecture.
 
-![Your First Angular Microfrontend. This is a step by step guide on how to… |  by Stefan Haas | Level Up Coding](https://miro.medium.com/v2/resize:fit:1051/1*p-ArC7CbZZzg6tXe9Gsh-Q.jpeg)
+![MicroFrontend](https://solopez.github.io/assets/img/micro.png)
 
 ## Cuál es el enfoque Micro Frontend?
 El enfoque de Micro Frontend es una arquitectura de desarrollo web que busca dividir una aplicación frontend en unidades más pequeñas e independientes.
