@@ -19,8 +19,7 @@ Buenasss como andan? Primer post del 2024 y volvemos con magia sobre Micro Front
 
 El post de hoy va dedicado a experiencias y algunos ejemplos para empezar a implementar Micro Frontends en nuestros proyectos con esta arquitectura.
 
-![Your First Angular Microfrontend. This is a step by step guide on how to… |  by Stefan Haas | Level Up Coding](https://miro.medium.com/v2/resize:fit:1051/1*p-ArC7CbZZzg6tXe9Gsh-Q.jpeg)
-
+![MicroFrontend](https://solopez.github.io/assets/img/micro.png)
 
 ## Cuál es el enfoque Micro Frontend?
 El enfoque de Micro Frontend es una arquitectura de desarrollo web que busca dividir una aplicación frontend en unidades más pequeñas e independientes.
@@ -28,6 +27,7 @@ El enfoque de Micro Frontend es una arquitectura de desarrollo web que busca div
 
 ## A codear!
 ![50 Ridiculously Funny Programming Memes that Every Developer HAS to See!](https://uploads-ssl.webflow.com/5f3c19f18169b62a0d0bf387/60d33be8cf4ba7565123c8bc_YPD3ulQQAGQpOcnqIm3QzSTRgzmr1SexpW9ZjMpJ1mAnUxx4iF05XOTu44sk0qQG-8XgBcYmGZGAD-5SAZvJl3TjtmhgWnn-w0C2XKwhBscV78RVvhwZfyp0v_Pa6sNj5zxpOvRW.png)
+
 ### Instalación
 En nuestras dos aplicaciones, app proyecto (shell) y app-microfront que será consumida por el proyecto (remote), vamos a instalar module federation:
 ```
