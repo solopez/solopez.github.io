@@ -17,7 +17,7 @@ author: sol lopez
 
 Buenasss como andan? Primer post del 2024 y volvemos con magia sobre Micro Frontends en Angular! Como siempre acerco docu complementaria por [acá](https://www.angulararchitects.io/en/blog/micro-frontends-with-modern-angular-part-1-standalone-and-esbuild/)
 
-El post de hoy va dedicado a experiencias y algunos ejemplos first contact para empezar a implementar Micro Frontends en nuestros proyectos con esta arquitectura.
+El post de hoy va dedicado a experiencias y algunos ejemplos para empezar a implementar Micro Frontends en nuestros proyectos con esta arquitectura.
 
 ![Your First Angular Microfrontend. This is a step by step guide on how to… |  by Stefan Haas | Level Up Coding](https://miro.medium.com/v2/resize:fit:1051/1*p-ArC7CbZZzg6tXe9Gsh-Q.jpeg)
 
