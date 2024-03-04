@@ -21,6 +21,7 @@ El post de hoy va dedicado a experiencias y algunos ejemplos para empezar a impl
 
 ![Your First Angular Microfrontend. This is a step by step guide on how to… |  by Stefan Haas | Level Up Coding](https://miro.medium.com/v2/resize:fit:1051/1*p-ArC7CbZZzg6tXe9Gsh-Q.jpeg)
 
+
 ## Cuál es el enfoque Micro Frontend?
 El enfoque de Micro Frontend es una arquitectura de desarrollo web que busca dividir una aplicación frontend en unidades más pequeñas e independientes.
 
@@ -188,6 +189,8 @@ Como todo en esta vida (?? es necesario que consideremos las ventajas y desventa
 9.  **Aislamiento de Errores:** Los errores en un Micro Frontend no se propagan a otras partes de la aplicación, ya que están encapsulados. Esto facilita la identificación y corrección de problemas.
     
 10.  **Facilita la Adopción de Tecnologías Emergentes:** Al permitir la adopción de nuevas tecnologías en módulos específicos, podes mantener tu aplicación al día con las últimas tendencias y tecnologías del desarrollo web.
+
+
 ### Desventajas:
 
 1.  **Complejidad:** La gestión de la comunicación entre Micro Frontends y la sincronización de estados puede volverse compleja.
