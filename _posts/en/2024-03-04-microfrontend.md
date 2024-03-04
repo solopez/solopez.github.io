@@ -19,7 +19,6 @@ How are you doing? First post of 2024 and we are back with magic about Micro Fro
 
 Today's post is dedicated to experiences and some first contact examples to start implementing Micro Frontends in our projects with this architecture.
 
-Translated with DeepL.com (free version)
 ![Your First Angular Microfrontend. This is a step by step guide on how to… |  by Stefan Haas | Level Up Coding](https://miro.medium.com/v2/resize:fit:1051/1*p-ArC7CbZZzg6tXe9Gsh-Q.jpeg)
 
 ## Cuál es el enfoque Micro Frontend?
@@ -188,7 +187,9 @@ As everything in this life (???) it is necessary that we consider the advantages
 10.  **Facilitates the Adoption of Emerging Technologies:** By allowing the adoption of new technologies in specific modules, you can keep your application up to date with the latest trends and technologies in web development.
 
 
+
 ### Disadvantages:
+
 
 1.  **Complexity:** Managing communication between Micro Frontends and state synchronization can become complex.
     
