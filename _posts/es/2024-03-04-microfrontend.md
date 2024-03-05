@@ -29,7 +29,9 @@ El enfoque de Micro Frontend es una arquitectura de desarrollo web que busca div
 ![50 Ridiculously Funny Programming Memes that Every Developer HAS to See!](https://uploads-ssl.webflow.com/5f3c19f18169b62a0d0bf387/60d33be8cf4ba7565123c8bc_YPD3ulQQAGQpOcnqIm3QzSTRgzmr1SexpW9ZjMpJ1mAnUxx4iF05XOTu44sk0qQG-8XgBcYmGZGAD-5SAZvJl3TjtmhgWnn-w0C2XKwhBscV78RVvhwZfyp0v_Pa6sNj5zxpOvRW.png)
 
 ### Instalación
-En nuestras dos aplicaciones, app proyecto (shell) y app-microfront que será consumida por el proyecto (remote), vamos a instalar module federation:
+En nuestras dos aplicaciones, app proyecto (shell) y app-microfront que será consumida por el proyecto (remote), vamos a instalar module federation: https://www.npmjs.com/package/@angular-architects/module-federation
+ 
+
 ```
 ng add @angular-architects/module-federation --project=remote
 ```
