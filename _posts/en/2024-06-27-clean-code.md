@@ -26,7 +26,7 @@ Now that we have seen some advantages, let's get to it!
 
 ## Comments in the code
 Good code does not need comments. Variables, methods and any other code components, such as attributes, should have easily identifiable and descriptive names.
-![clear](https://solopez.github.io/assets/img/memes/batman.png)
+![batman](https://solopez.github.io/assets/img/memes/batman.jpg)
 
 ## Conditionals
 Positive conditionals are easier to read than negative conditionals, so we must consider their interpretation as easy as possible. In case of evaluating more than one condition, we can help that readability, generating a constant with a meaningful name about what we are evaluating and apply it directly in the condition.
