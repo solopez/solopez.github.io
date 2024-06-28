@@ -26,7 +26,7 @@ Ahora que vimos algunas ventajas, vamos a eso!
 
 ## Comentarios en el código
 Un buen código no necesita comentarios. Las variables, métodos y cualquier otro componente del código, como los atributos, deberían tener nombres fáciles de identificar y descriptivos.
-![clear](https://solopez.github.io/assets/img/memes/batman.png)
+![batman](https://solopez.github.io/assets/img/memes/batman.jpg)
 
 
 ## Condicionales
