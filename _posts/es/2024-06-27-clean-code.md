@@ -16,7 +16,7 @@ author: sol lopez
 
 Buenasss como andan? El post de hoy va dedicado a Clean Code, repasemos algunas prácticas y principios. Si bien seguramente ya sabemos por qué es importante, veamos algunas de sus ventajas:
 
- - Legibilidad y mantenimiento: para poder leer, entender y modificar de manera más facil y segura código que no ha sido escrito por nosotros. Está bueno replantearnos si lo que escribimos, podría ser interpretado y modificado por alguien 
+ - Legibilidad y mantenimiento: para poder leer, entender y modificar de manera más facil y segura código que no ha sido escrito por nosotros. Está bueno replantearnos si lo que escribimos, podría ser interpretado y modificado por otr@ dev. 
  - Team collaboration: facilita la comunicación y cooperación entre equipos. Si establecemos estándares de código, y escribimos código simple de interpretar, comprender el trabajo de distintos devs es más fácil y promueve una colaboración más efectiva.
  - Debbuging + bug fixes: nos permite localizar e interpretar mejor, si nombramos variables de manera significativa y representativa, si tenemos una estructura clara en el código, facilitamos la identificación y detección de errores junto a su resolución.
 
