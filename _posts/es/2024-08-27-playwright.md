@@ -131,14 +131,16 @@ Ejecutamos la prueba con:
 
 `npx playwright test`
 
-### **BONUS: Grabador de Código**
+### **BONUS: Recording**
 
 Playwright tiene una herramienta integrada para grabar las interacciones y generar el código automáticamente (im sorry what?? siiii esto es realllllll).
-Ejecuta el siguiente comando para iniciar el grabador:
+Ejecutá el siguiente comando para iniciar el grabador:
 
 `npx playwright codegen https://example.com`
 
 Esto abrirá un navegador que grabará cada acción que realices en la página (en este caso example.com) y generará el código necesario de acuerdo a la interacción que vayamos teniendo con esa web. Si bien manualmente tengamos que ajustar nuestro código para que sea dinámico y se adapte a las necesidades, para agilizar el proceso es un golazo!
+
+Nota: También es posible configurar y adaptar (desde nuestra playwright.config) los reportes, para que los resultados tambien generen y guarden screenshots y/o videos de las pruebas ejecutadas (sí, magia pura).
 
 ![happy](https://i.pinimg.com/736x/dc/ae/89/dcae89ba0987641157f54e5f34eeeb5c.jpg)
 
