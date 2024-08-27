@@ -27,7 +27,7 @@ Node.js es un must, asi que si todavia no lo tenes [ahi va](https://nodejs.org).
 
 Una vez que tengas Node.js instalado, podes instalar Playwright globalmente (-g) o en tu proyecto local. Para instalarlo en un proyecto local, sigue estos pasos:
 
-    `npm install playwright`
+`npm install playwright`
 
 Este comando descargará e instalará los navegadores necesarios (Chromium, Firefox y WebKit).
 
@@ -39,28 +39,19 @@ Ahora que Playwright está instalado, vamos a crear un simple script para abrir 
 
     ```typescript
     const { chromium } = require("playwright");
-
     (async () => {
       // Inicia el navegador Chromium
       const browser = await chromium.launch({ headless: false }); // headless: false abre la ventana del navegador
-
       // Abre una nueva página
       const page = await browser.newPage();
-
       // Navega a una URL
       await page.goto("https://example.com");
-
       // Toma una captura de pantalla
       await page.screenshot({ path: "example.png" });
-
       // Cierra el navegador
       await browser.close();
     })();
     ```
-
-```
-
-```
 
 Este script hará lo siguiente:
 
@@ -71,9 +62,9 @@ Este script hará lo siguiente:
 
 2.  Ejecuta el script:
 
-```
+
     `node index.js`
-```
+
 
 Verás que se abre un navegador, visita la página y toma una captura de pantalla.
 
@@ -109,9 +100,7 @@ const { chromium } = require("playwright");
 
 A veces es necesario esperar a que ciertos elementos estén disponibles o que la página termine de cargarse. Playwright maneja esto automáticamente, pero tambien se podria aplicar `page.waitForSelector` (ojooooo, no es lo recomendable, solo para algunas excepciones su uso). Ejemplo de uso:
 
-
 `await page.waitForSelector('input[name="uname"]');`
-
 
 ![The best Be Careful memes :) Memedroid](https://images3.memedroid.com/images/UPLOADED325/6511da63da24d.jpeg)
 
