@@ -71,7 +71,7 @@ Para mas info y videos, recomiendo pegarle una [revisada](https://v17.angular.io
 
 1.  **Signals integrados en más partes del framework**:  
     Ahora están mejor conectados con otros elementos como los formularios y el router.
-    Por ejemplo, antes teníamos que subscribirnos al observable del control del form para implementar lógica y desuscribirnos para evitar fugas, ahora, con signals en form de manera nativa, ya no necesitamos preocuparnos por eso ni subscribirnos.
+    Por ejemplo, antes teníamos que subscribirnos al observable del control del form para implementar lógica y desuscribirnos para evitar fugas de memoria, ahora, con signals en form de manera nativa, ya no necesitamos preocuparnos por eso ni subscribirnos.
     ![Terrifier 3: O que você precisa saber antes de ver o filme de terror -  Observatório do Cinema](https://media.tenor.com/iHa8Q3BQsYgAAAAe/terrifier-clown-meme.png)
     
 2.  **Tests más simples y rápidos**:  
