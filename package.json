@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/thiagorossener/jekflix-template/issues"
   },
+  "overrides": {
+    "got": "12.1.0"
+  },
   "devDependencies": {
     "browser-sync": "^3.0.4",
     "child_process": "^1.0.2",
