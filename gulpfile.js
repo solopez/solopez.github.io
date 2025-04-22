@@ -11,7 +11,6 @@ let gulp         = require('gulp'),
     cp           = require('child_process'),
     del          = require('del'),
     fs           = require('fs'),
-    jsonSass     = require('json-sass'),
     source       = require('vinyl-source-stream');
 
 /**
