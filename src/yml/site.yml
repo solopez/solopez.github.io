@@ -14,6 +14,8 @@ show_hero: true
 menu:
   - title: Home
     url: /
+  - title: About Me
+    url: https://solopez.github.io/sol/ 
   - title: My Github
     url: https://github.com/solopez
   - title: Coffee or Beer?
