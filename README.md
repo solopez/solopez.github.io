@@ -1,7 +1,9 @@
 # 🧠 Frontend Technical Blog
 
 Blog técnico enfocado exclusivamente en **artículos de desarrollo Frontend**, implementado en **Ruby**.
+
 🌐 **Demo en producción:** https://solopez.github.io
+
 El proyecto incluye tanto el **desarrollo completo de la plataforma** como la **escritura de todos los artículos**, con un enfoque técnico, práctico y orientado a buenas prácticas reales del ecosistema frontend moderno.
 
 ---
