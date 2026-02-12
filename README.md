@@ -6,6 +6,8 @@ Blog técnico enfocado exclusivamente en **artículos de desarrollo Frontend**, 
 
 El proyecto incluye tanto el **desarrollo completo de la plataforma** como la **escritura de todos los artículos**, con un enfoque técnico, práctico y orientado a buenas prácticas reales del ecosistema frontend moderno.
 
+![blog homepage](https://solopez.github.io/assets/img/blog_home.png)
+
 ---
 
 ## ✍️ Autoría y propósito
